@@ -1,7 +1,7 @@
 //code copied from 21/21 MERN JWT
 
 const { AuthenticationError } = require("apollo-server-express");
-const { Profile } = require("../models");
+const { Profile, Pets } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -13,6 +13,13 @@ const resolvers = {
     profile: async (parent, { profileId }) => {
       return Profile.findOne({ _id: profileId });
     },
+
+    pet: async (parent, { petId }) => {
+      return Pets.findOne({_id: petId});
+    },
+    pets: async () => {
+      return Pets.find();
+    }
   },
 
   Mutation: {
@@ -21,6 +28,11 @@ const resolvers = {
       const token = signToken(profile);
 
       return { token, profile };
+    },
+    addPet: async (parent, { breed, sex, weight, name, owner}) => {
+      const pet = await Pets.create({ breed, sex, weight, name, owner});
+
+      return { pet };
     },
     login: async (parent, { email, password }) => {
       const profile = await Profile.findOne({ email });
@@ -42,6 +54,10 @@ const resolvers = {
     removeProfile: async (parent, { profileId }) => {
       return Profile.findOneAndDelete({ _id: profileId });
     },
+
+    removePet: async (parent, { petId }) => {
+      return Pets.findOneAndDelete({ _id: petId });
+    }
   },
 };
 

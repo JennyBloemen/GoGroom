@@ -8,6 +8,15 @@ const typeDefs = gql`
     password: String
   }
 
+  type Pets {
+    _id: ID
+    breed: String
+    sex: String
+    weight: String
+    name: String
+    owner: Profile
+  }
+
   type Auth {
     token: ID!
     profile: Profile
@@ -16,12 +25,33 @@ const typeDefs = gql`
   type Query {
     profiles: [Profile]!
     profile(profileId: ID!): Profile
+    pets: [Pets]!
+    pet(petId: ID!): Pets
   }
 
   type Mutation {
-    addProfile(name: String!, email: String!, password: String!): Auth
-    login(email: String!, password: String!): Auth
-    removeProfile(profileId: ID!): Profile
+    addProfile(
+      name: String!, 
+      email: String!, 
+      password: String!
+    ): Auth
+    login(
+      email: String!, 
+      password: String!
+    ): Auth
+    removeProfile(
+      profileId: ID!
+    ): Profile
+    addPet(
+      breed: String!, 
+      sex: String!, 
+      weight: String!, 
+      name: String!,
+      owner: String!
+    ): Pets
+    removePet(
+      petId: ID!
+    ): Pets
   }
 `;
 
