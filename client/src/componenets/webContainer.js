@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import NavTabs from './NavTabs';
-import Resume from './pages/Resume';
-import About from './pages/About';
-import Portfolio from './pages/Portfolio';
-import Contact from './pages/Contact';
+import Home from './Home';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Portfolio from './pages/Profile';
+import Services from './pages/Services';
 import '../../src/App.css'
 
 const Header = () => {
