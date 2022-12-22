@@ -6,6 +6,11 @@ import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import '../../src/App.css'
 
+const Header = () => {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
 export default function PortfolioContainer() {
   const [currentPage, setCurrentPage] = useState('Home');
 
@@ -33,6 +38,26 @@ return(
   <div className="navBar">
     <img src="./GGLogo.PNG" alt="GOGROOM logo">
 
+    <div>
+          {Auth.loggedIn() ? (
+            <>
+              <span>Hey there, {Auth.getProfile().data.username}!</span>
+              <button className="btn btn-lg btn-light m-2" onClick={logout}>
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link className="btn btn-lg btn-info m-2" to="/login">
+                Login
+              </Link>
+              <Link className="btn btn-lg btn-light m-2" to="/signup">
+                Signup
+              </Link>
+            </>
+          )}
+        </div>
+
   <section className="p-menu1">
     <nav id="navbar" className="navigation" role="navigation">
       <input id="toggle1" type="checkbox" />
@@ -44,8 +69,6 @@ return(
 
       <nav className="menu1">
         <a className="link1" href="#Home" onClick = {() => handlePageChange('Home')} className={currentPage === 'Home' ? 'nav-link active' : 'nav-link'}>Home</a>
-        <a className="link1" href="#Signup" onClick = {() => handlePageChange('Signup')} className={currentPage === 'Signup' ? 'nav-link active' : 'nav-link'}>Signup</a>
-        <a className="link1" href="#Login" onClick = {() => handlePageChange('Login')} className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}>Login</a>
         <a className="link1" href="#Scheduling" onClick = {() => handlePageChange('Scheduling')} className={currentPage === 'Scheduling' ? 'nav-link active' : 'nav-link'}>Scheduling</a>
         <a className="lin1 kbutton-nav" href="#Services" onClick = {() => handlePageChange('Services')} className={currentPage === 'Services' ? 'nav-link active' : 'nav-link'}>Services</a>
       </nav>
