@@ -1,3 +1,4 @@
-const Profile = require('./Profile');
+const resolvers = require("./resolvers");
+const typeDefs = require("./typeDefs");
 
-module.exports = { Profile };
+module.exports = { resolvers, typeDefs };
