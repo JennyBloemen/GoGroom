@@ -10,7 +10,7 @@ const Header = () => {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
-  };
+  }};
 export default function PortfolioContainer() {
   const [currentPage, setCurrentPage] = useState('Home');
 
@@ -30,13 +30,13 @@ export default function PortfolioContainer() {
       return <Scheduling/>;
     }
     return <Services/>;
-  };
+  }};
 
   const handlePageChange = (page) => setCurrentPage(page);
 
 return(
   <div className="navBar">
-    <img src="./GGLogo.PNG" alt="GOGROOM logo">
+    <img src="./GGLogo.PNG" alt="GOGROOM logo"/>
 
     <div>
           {Auth.loggedIn() ? (
