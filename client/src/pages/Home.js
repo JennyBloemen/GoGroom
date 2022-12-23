@@ -19,7 +19,7 @@ const Home = () => {
         <ul className="dogServiceList">
         {services.map((service) => (
           <li className="dogServiceListItem" key={service.uuid}>
-            {`${service.name} ${service.description} (${service.price})`}
+            {`${service.title} ${service.description} (${service.price})`}
           </li>
         ))}
         </ul>
@@ -27,10 +27,12 @@ const Home = () => {
       </div>
       <div className="catBanner">
         <img src="" alt="cat head image"/>
-        <ul>
-          <li>service 1</li>
-          <li>service 2</li>
-          <li>service 3</li>
+        <ul className='catServiceList'>
+        {services.map((service) => (
+          <li className="catServiceListItem" key={service.uuid}>
+            {`${service.title} ${service.description} (${service.price})`}
+          </li>
+        ))}
         </ul>
 
       </div>
