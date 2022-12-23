@@ -1,25 +1,35 @@
 //code copied from 21/21 MERN JWT
 
 const { AuthenticationError } = require("apollo-server-express");
-const { Profile, Pets } = require("../models");
+const { Profile, Pets, DogServices, CatServices } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    profiles: async () => {
-      return Profile.find();
-    },
-
     profile: async (parent, { profileId }) => {
       return Profile.findOne({ _id: profileId });
     },
-
+    profiles: async () => {
+      return Profile.find();
+    },
     pet: async (parent, { petId }) => {
       return Pets.findOne({_id: petId});
     },
     pets: async () => {
       return Pets.find();
-    }
+    },
+    dogService: async (parent, { dogServiceId }) => {
+      return DogServices.findOne({_id: dogServiceId});
+    },
+    dogServices: async () => {
+      return DogServices.find();
+    },
+    catService: async (parent, { catServiceId }) => {
+      return CatServices.findOne({_id: catServiceId});
+    },
+    catServices: async () => {
+      return CatServices.find();
+    },
   },
 
   Mutation: {
@@ -29,10 +39,32 @@ const resolvers = {
 
       return { token, profile };
     },
+    removeProfile: async (parent, { profileId }) => {
+      return Profile.findOneAndDelete({ _id: profileId });
+    },
     addPet: async (parent, { breed, sex, weight, name, owner}) => {
       const pet = await Pets.create({ breed, sex, weight, name, owner});
 
       return { pet };
+    },
+    removePet: async (parent, { petId }) => {
+      return Pets.findOneAndDelete({ _id: petId });
+    },
+    addDogService: async (parent, { bathAndBrush, bathAndClip, nailGringdingAndSanitation, topDog, topDogPlus, pet }) => {
+      const dogService = await DogServices.create({ bathAndBrush, bathAndClip, nailGringdingAndSanitation, topDog, topDogPlus, pet }) 
+      
+      return { dogService };
+    },
+    removeDogService: async (parent, { dogServiceId }) => {
+      return DogServices.findOneAndDelete({ _id: dogServiceId })
+    },
+    addCatService: async (parent, { bathAndBrush, nailFileAndPrep, topCat, topCatPlus, pet }) => {
+      const catService = await CatServices.create({ bathAndBrush, nailFileAndPrep, topCat, topCatPlus, pet }) 
+      
+      return { catService };
+    },
+    removeCatService: async (parent, { catServiceId }) => {
+      return CatServices.findOneAndDelete({ _id: catServiceId })
     },
     login: async (parent, { email, password }) => {
       const profile = await Profile.findOne({ email });
@@ -50,14 +82,6 @@ const resolvers = {
       const token = signToken(profile);
       return { token, profile };
     },
-
-    removeProfile: async (parent, { profileId }) => {
-      return Profile.findOneAndDelete({ _id: profileId });
-    },
-
-    removePet: async (parent, { petId }) => {
-      return Pets.findOneAndDelete({ _id: petId });
-    }
   },
 };
 

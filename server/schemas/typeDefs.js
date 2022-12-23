@@ -17,25 +17,44 @@ const typeDefs = gql`
     owner: Profile
   }
 
+  type DogServices {
+    _id: ID
+    bathAndBrush: Boolean
+    bathAndClip: Boolean
+    nailGrindingAndSanitation: Boolean
+    topDog: Boolean
+    topDogPlus: Boolean
+    pet: Pets
+  }
+
+  type CatServices {
+    _id: ID
+    bathAndBrush: Boolean
+    nailFileAndPrep: Boolean
+    topCat: Boolean
+    topCatPlus: Boolean
+    pet: Pets
+  }
+
   type Auth {
     token: ID!
     profile: Profile
   }
 
   type Query {
-    profiles: [Profile]!
     profile(profileId: ID!): Profile
-    pets: [Pets]!
+    profiles: [Profile]!
     pet(petId: ID!): Pets
+    pets: [Pets]!
+    dogService(dogServiceId: ID!): DogServices
+    dogServices: [DogServices]!
+    catService(catServiceId: ID!): CatServices
+    catServices: [CatServices]!
   }
 
   type Mutation {
     addProfile(
       name: String!, 
-      email: String!, 
-      password: String!
-    ): Auth
-    login(
       email: String!, 
       password: String!
     ): Auth
@@ -52,6 +71,32 @@ const typeDefs = gql`
     removePet(
       petId: ID!
     ): Pets
+    )
+    addDogService(
+      bathAndBrush: Boolean!,
+      bathAndClip: Boolean!,
+      nailGrindingAndSanitation: Boolean!,
+      topDog: Boolean!,
+      topDogPlus: Boolean!,
+      pet: String!,
+    ): DogServices
+    removeDogService(
+      dogServiceId: ID!
+    ): DogServices
+    addCatService(
+      bathAndBrush: Boolean!,
+      nailFileAndPrep: Boolean!,
+      topCat: Boolean!,
+      topCatPlus: Boolean!,
+      pet: String!,
+    ): CatServices  
+    removeCatService(
+      catServiceId: ID!
+    ): CatServices
+    login(
+      email: String!, 
+      password: String!
+    ): Auth
   }
 `;
 
