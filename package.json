@@ -2,7 +2,7 @@
   "name": "gogroom",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.js", 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "install": "cd server && npm i && cd ../client && npm i",
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/JennyBloemen/GoGroom/issues"
   },
-  "homepage": "https://github.com/JennyBloemen/GoGroom#readme"
+  "homepage": "https://github.com/JennyBloemen/GoGroom#readme",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
 }
