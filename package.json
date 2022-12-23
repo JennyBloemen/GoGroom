@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/JennyBloemen/GoGroom/issues"
   },
-  "homepage": "https://github.com/JennyBloemen/GoGroom#readme"
+  "homepage": "https://github.com/JennyBloemen/GoGroom#readme",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
 }
