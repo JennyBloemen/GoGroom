@@ -86,26 +86,3 @@ const resolvers = {
 };
 
 module.exports = resolvers;
-
-//code that may be reused for pets
-
-// removeSkill: async (parent, { profileId, skill }) => {
-//   return Profile.findOneAndUpdate(
-//     { _id: profileId },
-//     { $pull: { skills: skill } },
-//     { new: true }
-//   );
-// },
-
-// addSkill: async (parent, { profileId, skill }) => {
-//   return Profile.findOneAndUpdate(
-//     { _id: profileId },
-//     {
-//       $addToSet: { skills: skill },
-//     },
-//     {
-//       new: true,
-//       runValidators: true,
-//     }
-//   );
-// },

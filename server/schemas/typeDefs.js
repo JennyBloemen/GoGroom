@@ -71,7 +71,6 @@ const typeDefs = gql`
     removePet(
       petId: ID!
     ): Pets
-    )
     addDogService(
       bathAndBrush: Boolean!,
       bathAndClip: Boolean!,
