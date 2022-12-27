@@ -1,21 +1,25 @@
-import React from 'react';
-import { useQuery } from '@apollo/client';
+import React from "react";
+import { useQuery } from "@apollo/client";
 
-import ProfileList from '../components/ProfileList';
+// import Profile from "../components/Profile";
 
-import { QUERY_PROFILES } from '../utils/queries';
+import { QUERY_PROFILES } from "../utils/queries";
 
-const Home = () => {
+function Home() {
   const { loading, data } = useQuery(QUERY_PROFILES);
   const profiles = data?.profiles || [];
-
+  // temporary code until services are built, need to remove
+  const services = ["brush", "wash", "trim"];
   return (
+    // <>
+    //   <h1>test</h1>
+    // </>
     <div className="homeBody">
       <div className="gifGuy">
-        <img src="" alt="dog in bathtub gif"/>
+        <img src="" alt="dog in bathtub gif" />
       </div>
       <div className="dogBanner">
-        <img src="" alt="dog head image"/>
+        <img src="" alt="dog head image" />
         <ul className="dogServiceList">
         {services.map((service) => (
           <li className="dogServiceListItem" key={service.uuid}>
@@ -23,7 +27,6 @@ const Home = () => {
           </li>
         ))}
         </ul>
-
       </div>
       <div className="catBanner">
         <img src="" alt="cat head image"/>
@@ -34,10 +37,9 @@ const Home = () => {
           </li>
         ))}
         </ul>
-
       </div>
     </div>
   );
-};
+}
 
 export default Home;
