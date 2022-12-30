@@ -11,7 +11,58 @@
 
   color: #fff;
 } */
+:root{
+  --purp: #9381ff;
+  --lPurp: #b8b8ff;
+  --offw: #f8f7ff;
+  --sand: #ffeedd;
+  --org: #ffd8be;
+  --mint: #beeae4;
+  --sage: #9fdbce;
+}
+.navBar{
+  background-color: var(--sand);
 
+}
+
+body{
+  background-color: var(--offw);
+}
+
+
+.homeBody{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gifGuy{
+  background-color: #beeae4;
+  border-style: double;
+  border-color: #9fdbce;
+  border-radius: 10px;
+  border-width: 10px;
+  width: 25%;
+  height: inherit;
+}
+
+.dogBanner{
+  background-color: var(--sand);
+  border-style: solid;
+  border-color: var(--org);
+  border-radius: 10px;
+  border-width: 5px;
+  width: 30%;
+}
+
+.catBanner{
+  background-color: var(--lPurp);
+  border-style: solid;
+  border-color: var(--purp);
+  border-radius: 10px;
+  border-width: 5px;
+  width: 30%;
+  justify-items: flex-end;
+}
 a {
   color: #fff;
   text-decoration: none;
@@ -31,12 +82,12 @@ a {
   display: -ms-grid;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
-  justify-items: center;
+  justify-items: flex-end;
   z-index: 120;
 }
 
 .hamburger1 div {
-  background-color: rgb(61, 61, 61);
+  background-color: var(--purp);
   position: relative;
   width: 40px;
   height: 5px;
@@ -74,7 +125,7 @@ a {
 /* Menu */
 .menu1 {
   width: 100%;
-  background-color: #02173F;
+  background-color: var(--purp);
   margin: 0;
   display: -ms-grid;
   display: grid;

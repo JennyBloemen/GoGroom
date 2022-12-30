@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
+import Header from "../components/webContainer.js";
 
 // import Profile from "../components/Profile";
 
@@ -14,6 +15,10 @@ function Home() {
     // <>
     //   <h1>test</h1>
     // </>
+    <div>
+    <Header>
+    </Header>
+    
     <div className="homeBody">
       <div className="gifGuy">
         <img src="" alt="dog in bathtub gif" />
@@ -38,7 +43,7 @@ function Home() {
         ))}
         </ul>
       </div>
-    </div>
+    </div></div>
   );
 }
 
