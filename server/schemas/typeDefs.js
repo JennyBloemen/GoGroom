@@ -66,6 +66,7 @@ const typeDefs = gql`
       sex: String!, 
       weight: String!, 
       name: String!,
+      age: String!,
       owner: String!
     ): Pets
     removePet(

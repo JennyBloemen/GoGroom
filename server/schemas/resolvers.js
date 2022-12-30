@@ -42,8 +42,8 @@ const resolvers = {
     removeProfile: async (parent, { profileId }) => {
       return Profile.findOneAndDelete({ _id: profileId });
     },
-    addPet: async (parent, { breed, sex, weight, name, owner}) => {
-      const pet = await Pets.create({ breed, sex, weight, name, owner});
+    addPet: async (parent, { breed, sex, weight, name, age, owner}) => {
+      const pet = await Pets.create({ breed, sex, weight, name, age, owner});
 
       return { pet };
     },

@@ -17,6 +17,10 @@ const petsSchema = new Schema({
     type: String,
     required: true,
   },
+  age: {
+    type: String,
+    required: true,
+  },
   owner: {
     type: Schema.Types.ObjectId,
     ref: "Profile",
