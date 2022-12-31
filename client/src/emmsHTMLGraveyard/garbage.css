@@ -22,6 +22,7 @@
 }
 .navBar{
   background-color: var(--sand);
+  flex-direction: row;
 
 }
 
@@ -72,7 +73,13 @@ a {
    height: 100%;
 }
 
-
+.logBin{
+  background-color: #b8b8ff;
+  border-style: double;
+  border-color: #9381ff;
+  border-width: 5px;
+  border-radius: 10px;
+}
 
 
 /* Hamburger */

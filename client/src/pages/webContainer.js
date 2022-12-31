@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import Home from '../pages/Home';
-import Login from '../pages/Login';
+import Login from '../p/Login';
 import Signup from '../pages/Signup';
 import Profile from '../pages/Profile';
 import Services from '../pages/Services';
 import '../../src/App.css'
-import Auth from '../utils/auth.js'
-import Scheduling from '../pages/Scheduling'
 import { useQuery } from "@apollo/client";
-import '../emmsHTMLGraveyard/garbage.css'
 
 // const Header = () => {
 //   const logout = (event) => {
@@ -16,8 +13,8 @@ import '../emmsHTMLGraveyard/garbage.css'
 //     Auth.logout();
 //   }};
  function Header() {
-  // const { loading, data } = useQuery(QUERY_PROFILES);
-  // const profiles = data?.profiles || [];
+  const { loading, data } = useQuery(QUERY_PROFILES);
+  const profiles = data?.profiles || [];
   const [currentPage, setCurrentPage] = useState('Home');
 
   const renderPage = ()=> {
@@ -48,27 +45,18 @@ return(
           {Auth.loggedIn() ? (
             <>
               <span>Hey there, {Auth.getProfile().data.username}!</span>
-              <button className="btn btn-lg btn-light m-2" onClick={Auth.logout()}>
+              <button className="btn btn-lg btn-light m-2" onClick={logout}>
                 Logout
               </button>
             </>
           ) : (
             <>
-             {/* <Link className="btn btn-lg btn-info m-2" to="/login">
-//                 Login
-//               </Link>
-//               <Link className="btn btn-lg btn-light m-2" to="/signup">
-//                 Signup
-//               </Link> */}
-              {/* <Login className="btn btn-lg btn-info m-2" to="/login">
+              <Link className="btn btn-lg btn-info m-2" to="/login">
                 Login
-              </Login>
-              <Signup className="btn btn-lg btn-light m-2" to="/signup">
+              </Link>
+              <Link className="btn btn-lg btn-light m-2" to="/signup">
                 Signup
-              </Signup> */}
-
-              {/* <button className= "btn btn-lg btn-info m-2" onClick={() => handlePageChange('Login')} >login</button>
-              <button className="btn btn-lg btn-light m-2" onClick={() => handlePageChange('Signup')}> signup</button> */}
+              </Link>
             </>
           )}
         </div>
@@ -85,7 +73,7 @@ return(
       <nav className="menu1">
         <a className={currentPage === 'Home' ? 'nav-link active link1' : 'nav-link link 1'}  href="#Home" onClick = {() => handlePageChange('Home')} >Home</a>
         <a href="#Scheduling" onClick = {() => handlePageChange('Scheduling')} className={currentPage === 'Scheduling' ? 'nav-link active link1' : 'nav-link link1'}>Scheduling</a>
-        <a href="#Services" onClick = {() => handlePageChange('Services')} className={currentPage === 'Services' ? 'nav-link active link1 kbutton-nav' : 'nav-link link1 kbutton-nav'}>Services</a>
+        <a href="#Services" onClick = {() => handlePageChange('Services')} className={currentPage === 'Services' ? 'nav-link active lin1 kbutton-nav' : 'nav-link lin1 kbutton-nav'}>Services</a>
       </nav>
   </nav>
   </section>
