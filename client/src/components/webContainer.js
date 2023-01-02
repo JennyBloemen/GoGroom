@@ -9,6 +9,7 @@ import Auth from '../utils/auth.js'
 import Scheduling from '../pages/Scheduling'
 import { useQuery } from "@apollo/client";
 import '../emmsHTMLGraveyard/garbage.css'
+import { Link } from 'react-router-dom';
 
 // const Header = () => {
 //   const logout = (event) => {
@@ -54,21 +55,13 @@ return(
             </>
           ) : (
             <>
-             {/* <Link className="btn btn-lg btn-info m-2" to="/login">
+             <Link className="btn btn-lg btn-info m-2" to="/login">
 //                 Login
 //               </Link>
 //               <Link className="btn btn-lg btn-light m-2" to="/signup">
 //                 Signup
-//               </Link> */}
-              {/* <Login className="btn btn-lg btn-info m-2" to="/login">
-                Login
-              </Login>
-              <Signup className="btn btn-lg btn-light m-2" to="/signup">
-                Signup
-              </Signup> */}
+//               </Link>
 
-              {/* <button className= "btn btn-lg btn-info m-2" onClick={() => handlePageChange('Login')} >login</button>
-              <button className="btn btn-lg btn-light m-2" onClick={() => handlePageChange('Signup')}> signup</button> */}
             </>
           )}
         </div>
@@ -84,8 +77,8 @@ return(
 
       <nav className="menu1">
         <a className={currentPage === 'Home' ? 'nav-link active link1' : 'nav-link link 1'}  href="#Home" onClick = {() => handlePageChange('Home')} >Home</a>
-        <a href="#Scheduling" onClick = {() => handlePageChange('Scheduling')} className={currentPage === 'Scheduling' ? 'nav-link active link1' : 'nav-link link1'}>Scheduling</a>
-        <a href="#Services" onClick = {() => handlePageChange('Services')} className={currentPage === 'Services' ? 'nav-link active link1 kbutton-nav' : 'nav-link link1 kbutton-nav'}>Services</a>
+        <a href="Scheduling" onClick = {() => handlePageChange('Scheduling')} className={currentPage === 'Scheduling' ? 'nav-link active link1' : 'nav-link link1'}>Scheduling</a>
+        <a href="Services" onClick = {() => handlePageChange('Services')} className={currentPage === 'Services' ? 'nav-link active link1 kbutton-nav' : 'nav-link link1 kbutton-nav'}>Services</a>
       </nav>
   </nav>
   </section>

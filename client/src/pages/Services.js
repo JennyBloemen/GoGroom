@@ -9,14 +9,15 @@ import { QUERY_PROFILES } from '../utils/queries';
 const Services = () => {
   const { loading, data } = useQuery(QUERY_PROFILES);
   const profiles = data?.profiles || [];
-
+// temporary code until services are built, need to remove
+const services = ["brush", "wash", "trim"];
 return (
 
 <div>
 <Header>
 </Header>
 
-{/* <div className='homeBody'>
+<div className='homeBody'>
     <h1>SERVICES</h1>
     <div className='catServices'>
         <h2>CATS</h2>
@@ -38,33 +39,9 @@ return (
         ))}
         </ul>
     </div>
-</div> */}
-
-<div className="homeBody">
-  <div className="gifGuy">
-    <img src="" alt="dog in bathtub gif" />
-  </div>
-  <div className="dogBanner">
-    <img src="" alt="dog head image" />
-    <ul className="dogServiceList">
-    {/* {services.map((service) => (
-      <li className="dogServiceListItem" key={service.uuid}>
-        {`${service.title} ${service.description} (${service.price})`}
-      </li>
-    ))} */}
-    </ul>
-  </div>
-  <div className="catBanner">
-    <img src="" alt="cat head image"/>
-    <ul className='catServiceList'>
-    {/* {services.map((service) => (
-      <li className="catServiceListItem" key={service.uuid}>
-        {`${service.title} ${service.description} (${service.price})`}
-      </li>
-    ))} */}
-    </ul>
-  </div>
 </div>
+
+
 </div>
 
 )};
