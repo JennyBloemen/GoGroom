@@ -17,8 +17,8 @@ return (
 <Header>
 </Header>
 
-<div className='homeBody'>
-    <h1>SERVICES</h1>
+<div className='servBody'>
+    <h1 className='servH1'>SERVICES</h1>
     <div className='catServices'>
         <h2>CATS</h2>
     <ul className='catServiceList'>
@@ -29,7 +29,7 @@ return (
         ))}
         </ul>
     </div>
-    <div className='catServices'>
+    <div className='dogServices'>
         <h2>DOGS</h2>
     <ul className='dogServiceList'>
         {services.map((service) => (
