@@ -10,8 +10,8 @@ import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 // need to create these pages
-// import Scheduling from "./pages/Scheduling";
-// import Services from "./pages/Services";
+import Scheduling from "./pages/Scheduling";
+import Services from "./pages/Services";
 
 function App() {
   return (
@@ -21,8 +21,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/profile/:profileId" element={<Profile />} />
-        {/* <Route path="/services" element={<Services />} />
-        <Route path="/scheduling" element={<Scheduling />} /> */}
+        <Route path="/services" element={<Services />} />
+        <Route path="/scheduling" element={<Scheduling />} />
       </Routes>
     </div>
   );
