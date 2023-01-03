@@ -6,6 +6,7 @@ import Profile from '../pages/Profile';
 import Services from '../pages/Services';
 import '../../src/App.css'
 import { useQuery } from "@apollo/client";
+import GGlogo from '../emmsHTMLGraveyard/GGLogo.PNG'
 
 // const Header = () => {
 //   const logout = (event) => {
@@ -39,7 +40,7 @@ import { useQuery } from "@apollo/client";
 
 return(
   <div className="navBar">
-    <img src="./GGLogo.PNG" alt="GOGROOM logo"/>
+    <img src={GGlogo} alt="GOGROOM logo" className='logo'/>
 
     <div>
           {Auth.loggedIn() ? (

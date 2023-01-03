@@ -4,6 +4,9 @@ import Header from "../components/webContainer.js";
 import Login from './Login.js';
 import Auth from '../utils/auth.js'
 import '../emmsHTMLGraveyard/garbage.css'
+import catIcon from '../emmsHTMLGraveyard/catIcon.PNG'
+import dogIcon from '../emmsHTMLGraveyard/dogIcon.PNG'
+import tubPup from '../emmsHTMLGraveyard/tubPup.GIF'
 
 import Profile from "./Profile.js";
 
@@ -37,10 +40,10 @@ function Home() {
     
       )}; */}
         <div className="gifGuy">
-    <img src="" alt="dog in bathtub gif" />
+    <img src={tubPup} alt="dog in bathtub gif" className="bigGif" />
   </div>
   <div className="dogBanner">
-    <img src="" alt="dog head image" />
+    <img src={dogIcon} alt="dog head image" className="headIcon" />
     <ul className="dogServiceList">
     {services.map((service) => (
       <li className="dogServiceListItem" key={service.uuid}>
@@ -50,7 +53,7 @@ function Home() {
     </ul>
   </div>
   <div className="catBanner">
-    <img src="" alt="cat head image"/>
+    <img src={catIcon} alt="cat head image" className="headIcon"/>
     <ul className='catServiceList'>
     {services.map((service) => (
       <li className="catServiceListItem" key={service.uuid}>

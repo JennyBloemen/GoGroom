@@ -22,19 +22,27 @@
 }
 .navBar{
   background-color: var(--sand);
-  flex-direction: row;
-
+}
+.logo{
+  height: 100%;
 }
 
 body{
   background-color: var(--offw);
   font-family: 'Balsamiq Sans', cursive;
 }
-
+.btn{
+  background-color: var(--sage);
+  color: #f8f7ff;
+  border-radius: 20px;
+  margin: 2%;
+  
+}
 
 .homeBody{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .gifGuy{
@@ -43,8 +51,23 @@ body{
   border-color: #9fdbce;
   border-radius: 10px;
   border-width: 10px;
-  width: 25%;
+  width: 35%;
   height: inherit;
+}
+
+.bigGif{
+  width: 100%;
+  height: 100%;
+}
+.headIcon{
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 1%;
+align-content: center;
+/* width: 50%;
+height: 50%; */
+display: flex;
 }
 
 .dogBanner{
@@ -53,7 +76,9 @@ body{
   border-color: var(--org);
   border-radius: 10px;
   border-width: 5px;
-  width: 30%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
 }
 
 .catBanner{
@@ -62,8 +87,10 @@ body{
   border-color: var(--purp);
   border-radius: 10px;
   border-width: 5px;
-  width: 30%;
+  width: 25%;
   justify-items: flex-end;
+  display: flex;
+  flex-direction: column;
 }
 a {
   color: #fff;
@@ -97,6 +124,7 @@ a {
   height: 90%;
   align-items: center;
   justify-items: center;
+
 }
 
 .signBin{

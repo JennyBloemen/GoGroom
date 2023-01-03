@@ -23,7 +23,7 @@ router.get('/', async(req,res) =>{
 
 //PROFILE ROUTES
 
-router.get('/profile/profileId', async(req, res)=>{
+router.get('/profile/:profileId', async(req, res)=>{
     try{
         const profile= await Profile.findOne({_id: req.params.profileId});
         res.send(profile);
@@ -35,3 +35,4 @@ router.get('/profile/profileId', async(req, res)=>{
 })
 
 
+router.get('/profile/:profileId/ ')
