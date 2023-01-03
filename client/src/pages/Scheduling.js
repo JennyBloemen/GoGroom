@@ -1,5 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
+import DateTimePicker from 'react-datetime-picker';
+
+function dateTime() {
+  const [value, onChange] = useState(new Date());
+
+  return (
+    <div>
+      <DateTimePicker onChange={onChange} value={value} />
+    </div>
+  );
+}
 
 // import ProfileList from '../components/ProfileList';
 
