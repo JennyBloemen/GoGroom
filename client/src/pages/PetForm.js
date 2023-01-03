@@ -5,6 +5,7 @@ import { useMutation } from "@apollo/client";
 import { ADD_PET } from "../utils/mutations";
 
 import Auth from "../utils/auth";
+import { addTypenameToDocument } from "@apollo/client/utilities";
 
 const addPet = () => {
   const [formState, setFormState] = useState({
@@ -32,7 +33,7 @@ const addPet = () => {
     console.log(formState);
 
     try {
-      const { data } = await addProfile({
+      const { data } = await addTypenameToDocument({
         variables: { ...formState },
       });
 
@@ -46,7 +47,7 @@ const addPet = () => {
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
         <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
+          <h4 className="card-header bg-dark text-light p-2">Add a Pet!</h4>
           <div className="card-body">
             {data ? (
               <p>
@@ -57,7 +58,7 @@ const addPet = () => {
               <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
-                  placeholder="Your username"
+                  placeholder="Pet Name"
                   name="name"
                   type="text"
                   value={formState.name}
@@ -65,18 +66,34 @@ const addPet = () => {
                 />
                 <input
                   className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
+                  placeholder="Pet Breed"
+                  name="breed"
+                  type="text"
+                  value={formState.breed}
                   onChange={handleChange}
                 />
                 <input
                   className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
+                  placeholder="Pet Gender"
+                  name="sex"
+                  type="text"
+                  value={formState.sex}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="Pet Age"
+                  name="age"
+                  type="text"
+                  value={formState.age}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="Pet Weight"
+                  name="weight"
+                  type="text"
+                  value={formState.weight}
                   onChange={handleChange}
                 />
                 <button
@@ -102,3 +119,7 @@ const addPet = () => {
 };
 
 export default Signup;
+
+// {projects.map((data, idx) => (
+//   <Projects data={data} key={idx} />
+// ))}
