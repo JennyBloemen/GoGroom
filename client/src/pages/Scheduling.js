@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-
+import Header from "../components/webContainer.js";
 // import ProfileList from '../components/ProfileList';
 
 import { QUERY_PROFILES } from '../utils/queries';
@@ -10,6 +10,8 @@ const Scheduling = () => {
   const profiles = data?.profiles || [];
 
 return (
+  <div>
+     <Header></Header>
 <div className='homeBody'>
     <h1>Schedule An Appointment</h1>
   
@@ -47,6 +49,7 @@ return (
         </form>
     
   
+</div>
 </div>
 
 )};
