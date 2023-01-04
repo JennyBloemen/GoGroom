@@ -12,15 +12,29 @@ export const ADD_PROFILE = gql`
   }
 `;
 
-// export const ADD_PET = gql`
-//   mutation addPet($breed: String!, $sex: String!, $weight: String!,
-//       $name: String!, $owner: String!) {
-//         addPet(breed: $breed, sex: $sex, weight: $weight,
-//           name: $name, owner: $owner) {
-
-// }
-// }
-// `;
+export const ADD_PET = gql`
+  mutation addPet(
+    $breed: String!
+    $sex: String!
+    $weight: String!
+    $name: String!
+    $owner: String!
+  ) {
+    addPet(
+      breed: $breed
+      sex: $sex
+      weight: $weight
+      name: $name
+      owner: $owner
+    ) {
+      token
+      user {
+        _id
+        name
+      }
+    }
+  }
+`;
 
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
