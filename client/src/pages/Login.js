@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, Navigate, redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 
@@ -7,7 +7,7 @@ import Auth from "../utils/auth";
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
-  // const [currUserId, setcurrUserId] = useState("");
+
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
   // update state based on form input changes
@@ -28,20 +28,17 @@ const Login = (props) => {
       const { data } = await login({
         variables: { ...formState },
       });
-      // console.log(data.login.profile._id);
-      // setcurrUserId(data.login.profile._id);
+
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
     }
 
-    // clear form values
     setFormState({
       email: "",
       password: "",
     });
   };
-  // redirect(`/profile/${currUserId}`)
 
   return (
     <main className="flex-row justify-center mb-4">
