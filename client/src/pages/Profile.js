@@ -30,11 +30,12 @@ function Profile() {
   </div>
   <div className="petCard">
     <img src="" alt="your pet here"/>
-    <h2>pet's name</h2>
+    <h2>pet's name:</h2>
     <ul>
-      <li>age:</li>
-      <li>breed:</li>
-      <li>FIxed:</li>
+      <li>Breed:</li>
+      <li>Sex:</li>
+      <li> Weight:</li>
+      <li>Age:</li>
     </ul>
     <a href="#">Edit</a>
 

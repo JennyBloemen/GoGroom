@@ -79,19 +79,19 @@ function Header() {
           </label>
 
           <nav className="menu1">
-            <a
+            <Link
               className={
                 currentPage === "Home"
                   ? "nav-link active link1"
                   : "nav-link link 1"
               }
-              href="#Home"
+              to="/"
               onClick={() => handlePageChange("Home")}
             >
               Home
-            </a>
-            <a
-              href="Scheduling"
+            </Link>
+            <Link
+              to="/scheduling"
               onClick={() => handlePageChange("Scheduling")}
               className={
                 currentPage === "Scheduling"
@@ -100,9 +100,9 @@ function Header() {
               }
             >
               Scheduling
-            </a>
-            <a
-              href="Services"
+            </Link>
+            <Link
+              to="/services"
               onClick={() => handlePageChange("Services")}
               className={
                 currentPage === "Services"
@@ -111,7 +111,7 @@ function Header() {
               }
             >
               Services
-            </a>
+            </Link>
           </nav>
         </nav>
       </section>
