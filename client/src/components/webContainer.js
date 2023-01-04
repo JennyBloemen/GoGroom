@@ -113,6 +113,17 @@ function Header() {
             >
               Services
             </Link>
+            <Link
+              to="/profile"
+              onClick={() => handlePageChange("Profile")}
+              className={
+                currentPage === "Services"
+                  ? "nav-link active link1 kbutton-nav"
+                  : "nav-link link1 kbutton-nav"
+              }
+            >
+              Profile
+            </Link>
           </nav>
         </nav>
       </section>
