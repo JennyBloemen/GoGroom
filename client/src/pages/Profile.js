@@ -17,34 +17,31 @@ function Profile() {
   const profile = data?.profileId || {};
 
   return (
-    <div >
+    <div>
       <Header></Header>
       <div className="homeBody">
-      <div className="userCard">
-    <h2>User's name</h2>
-    <ul>
-      <li>phone #:</li>
-      <li>email:</li>
-    </ul>
+        <div className="userCard">
+          <h2>User's name</h2>
+          <ul>
+            <li>phone #:</li>
+            <li>email:</li>
+          </ul>
+        </div>
+        <div className="petCard">
+          <img src="" alt="your pet here" />
+          <h2>pet's name:</h2>
+          <ul>
+            <li>Breed:</li>
+            <li>Sex:</li>
+            <li>Weight:</li>
+            <li>Age:</li>
+          </ul>
+          <a href="#">Edit</a>
+        </div>
 
-  </div>
-  <div className="petCard">
-    <img src="" alt="your pet here"/>
-    <h2>pet's name:</h2>
-    <ul>
-      <li>Breed:</li>
-      <li>Sex:</li>
-      <li> Weight:</li>
-      <li>Age:</li>
-    </ul>
-    <a href="#">Edit</a>
-
-  </div>
-
-  <a href="#">Add Appointment</a>
-  <a href="#"> Add Pet</a>
-
-    </div>
+        <a href="#">Add Appointment</a>
+        <a href="#"> Add Pet</a>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Navigate, redirect } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 
@@ -7,6 +7,7 @@ import Auth from "../utils/auth";
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
+  // const [currUserId, setcurrUserId] = useState("");
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
   // update state based on form input changes
@@ -27,7 +28,8 @@ const Login = (props) => {
       const { data } = await login({
         variables: { ...formState },
       });
-      console.log(JSON.stringify(data));
+      // console.log(data.login.profile._id);
+      // setcurrUserId(data.login.profile._id);
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
@@ -38,8 +40,8 @@ const Login = (props) => {
       email: "",
       password: "",
     });
-    // Redirect(`/profile/${data.profile._id}`);
   };
+  // redirect(`/profile/${currUserId}`)
 
   return (
     <main className="flex-row justify-center mb-4">
@@ -48,10 +50,7 @@ const Login = (props) => {
           <h4 className="card-header bg-dark text-light p-2">Login</h4>
           <div className="card-body">
             {data ? (
-              <p>
-                Success! You are logged in!
-                {/* {" "}<Link to="/">back to the homepage.</Link> */}
-              </p>
+              <Navigate to={`/profile/${data.login.profile._id}`} />
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input

@@ -7,12 +7,15 @@ import Services from "../pages/Services";
 import "../../src/App.css";
 import { useQuery } from "@apollo/client";
 import GGlogo from "../emmsHTMLGraveyard/GGLogo.PNG";
+import auth from "../utils/auth";
 
-// const Header = () => {
-//   const logout = (event) => {
-//     event.preventDefault();
-//     Auth.logout();
-//   }};
+const Header = () => {
+  const logout = (event) => {
+    event.preventDefault();
+    auth.logout();
+  };
+};
+
 function Header() {
   const { loading, data } = useQuery(QUERY_PROFILES);
   const profiles = data?.profiles || [];
@@ -41,25 +44,25 @@ function Header() {
 
   return (
     <div className="navBar">
-      <img src={GGlogo} alt="GOGROOM logo" className="logo" />
+      <img src={GGlogo} alt="GOGROOM logo" className="logo"></img>
 
       <div>
-        {/* {Auth.loggedIn() ? (
+        {auth.loggedIn() ? (
           <>
-            <span>Hey there, {Auth.getProfile().data.username}!</span>
+            <span>Hey there, {auth.getProfile().data.username}!</span>
             <button className="btn btn-lg btn-light m-2" onClick={logout}>
               Logout
             </button>
           </>
-        ) : ( */}
-        <>
-          <Link className="btn btn-lg btn-info m-2" to="/login">
-            Login
-          </Link>
-          <Link className="btn btn-lg btn-light m-2" to="/signup">
-            Signup
-          </Link>
-        </>
+        ) : (
+          <>
+            <Link className="btn btn-lg btn-info m-2" to="/login">
+              Login
+            </Link>
+            <Link className="btn btn-lg btn-light m-2" to="/signup">
+              Signup
+            </Link>
+          </>
         )}
       </div>
 
