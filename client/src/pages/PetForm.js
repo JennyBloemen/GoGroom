@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-import { useMutation } from '@apollo/client';
-import { ADD_PROFILE } from '../utils/mutations';
+import { useMutation } from "@apollo/client";
+import { ADD_PET } from "../utils/mutations";
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
+import { addTypenameToDocument } from "@apollo/client/utilities";
 
-const Signup = () => {
+const addPet = () => {
   const [formState, setFormState] = useState({
-    name: '',
-    email: '',
-    password: '',
+    name: "",
+    breed: "",
+    sex: "",
+    weight: "",
+    age: "",
   });
-  const [addProfile, { error, data }] = useMutation(ADD_PROFILE);
+  const [addPet, { error, data }] = useMutation(ADD_PET);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -30,7 +33,7 @@ const Signup = () => {
     console.log(formState);
 
     try {
-      const { data } = await addProfile({
+      const { data } = await addTypenameToDocument({
         variables: { ...formState },
       });
 
@@ -42,20 +45,20 @@ const Signup = () => {
 
   return (
     <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10 binboth">
-        <div className="card signBin">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
+      <div className="col-12 col-lg-10">
+        <div className="card">
+          <h4 className="card-header bg-dark text-light p-2">Add a Pet!</h4>
           <div className="card-body">
             {data ? (
               <p>
-                Success! You may now head{' '}
+                Success! You may now head{" "}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
-                  placeholder="Your username"
+                  placeholder="Pet Name"
                   name="name"
                   type="text"
                   value={formState.name}
@@ -63,23 +66,39 @@ const Signup = () => {
                 />
                 <input
                   className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
+                  placeholder="Pet Breed"
+                  name="breed"
+                  type="text"
+                  value={formState.breed}
                   onChange={handleChange}
                 />
                 <input
                   className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
+                  placeholder="Pet Gender"
+                  name="sex"
+                  type="text"
+                  value={formState.sex}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="Pet Age"
+                  name="age"
+                  type="text"
+                  value={formState.age}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="Pet Weight"
+                  name="weight"
+                  type="text"
+                  value={formState.weight}
                   onChange={handleChange}
                 />
                 <button
                   className="btn btn-block btn-info"
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                   type="submit"
                 >
                   Submit
@@ -100,3 +119,7 @@ const Signup = () => {
 };
 
 export default Signup;
+
+// {projects.map((data, idx) => (
+//   <Projects data={data} key={idx} />
+// ))}

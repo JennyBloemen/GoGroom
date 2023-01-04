@@ -12,14 +12,14 @@ export const ADD_PROFILE = gql`
   }
 `;
 
-// export const ADD_SKILL = gql`
-//   mutation addSkill($profileId: ID!, $skill: String!) {
-//     addSkill(profileId: $profileId, skill: $skill) {
-//       _id
-//       name
-//       skills
-//     }
-//   }
+// export const ADD_PET = gql`
+//   mutation addPet($breed: String!, $sex: String!, $weight: String!,
+//       $name: String!, $owner: String!) {
+//         addPet(breed: $breed, sex: $sex, weight: $weight,
+//           name: $name, owner: $owner) {
+
+// }
+// }
 // `;
 
 export const LOGIN_USER = gql`
