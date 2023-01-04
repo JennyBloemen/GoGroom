@@ -11,6 +11,7 @@ import { useQuery } from "@apollo/client";
 import "../emmsHTMLGraveyard/garbage.css";
 import { Link } from "react-router-dom";
 
+import GGlogo from "../emmsHTMLGraveyard/GGLogo.PNG"
 // const Header = () => {
 //   const logout = (event) => {
 //     event.preventDefault();
@@ -44,7 +45,7 @@ function Header() {
 
   return (
     <div className="navBar">
-      <img src="./GGLogo.PNG" alt="GOGROOM logo" />
+      <img src={GGlogo} alt="GOGROOM logo"></img>
 
       <div>
         {Auth.loggedIn() ? (
