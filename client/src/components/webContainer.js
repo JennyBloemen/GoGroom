@@ -12,14 +12,17 @@ import "../emmsHTMLGraveyard/garbage.css";
 import { Link } from "react-router-dom";
 
 // const Header = () => {
-//   const logout = (event) => {
-//     event.preventDefault();
-//     Auth.logout();
-//   }};
+
+// };
 function Header() {
   // const { loading, data } = useQuery(QUERY_PROFILES);
   // const profiles = data?.profiles || [];
   const [currentPage, setCurrentPage] = useState("Home");
+
+  const logout = () => {
+    // event.preventDefault();
+    Auth.logout();
+  };
 
   const renderPage = () => {
     if (currentPage === "Home") {
@@ -44,15 +47,15 @@ function Header() {
 
   return (
     <div className="navBar">
-      <img src="./GGLogo.PNG" alt="GOGROOM logo" />
+      <img src={"./GGLogo.PNG"} alt="GOGROOM logo" />
 
       <div>
         {Auth.loggedIn() ? (
           <>
-            <span>Hey there, {Auth.getProfile().data.username}!</span>
+            <span>Hey there, {Auth.getProfile().data.name}!</span>
             <button
               className="btn btn-lg btn-light m-2"
-              onClick={Auth.logout()}
+              onClick={() => logout()}
             >
               Logout
             </button>
