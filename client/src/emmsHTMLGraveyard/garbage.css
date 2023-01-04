@@ -179,7 +179,7 @@ a {
           transform: rotate(45deg);
   margin-top: -5px;
 }
-
+  
 #toggle1:checked + .hamburger1 .bottom {
   -webkit-transform: scale(0);
           transform: scale(0);
