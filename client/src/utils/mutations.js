@@ -18,6 +18,7 @@ export const ADD_PET = gql`
     $sex: String!
     $weight: String!
     $name: String!
+    $age: Age!
     $owner: String!
   ) {
     addPet(
@@ -25,6 +26,7 @@ export const ADD_PET = gql`
       sex: $sex
       weight: $weight
       name: $name
+      age: $age
       owner: $owner
     ) {
       token
