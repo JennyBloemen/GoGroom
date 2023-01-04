@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import DateTimePicker from 'react-datetime-picker';
 
-function dateTime() {
+// function for Scheduling page
+function Scheduling() {
   const [value, onChange] = useState(new Date());
 
   return (
     <div>
-      <DateTimePicker onChange={onChange} value={value} />
+      <h1>Scheduling</h1>
+      <DateTimePicker />
     </div>
   );
 }
@@ -30,11 +32,12 @@ return (
 
         <form className='makeApt'>
             <select>
-                 {/* {services.map((service) => (
-          <option key={service.uuid} value>
-            {`${service.name} ${service.description} (${service.price})`} */}
-          {/* </option> */}
-        {/* ))} */}
+              { loading ? ( <option>Loading...</option> ) : ( <option>Select a service</option> ) } 
+              {scheduling.map((scheduling) => ( 
+                <option key={profiles.uuid} value>
+                  {`${scheduling.name} ${scheduling.description} (${scheduling.price})`}
+                </option>
+              ))}
             </select>
 
         </form>
