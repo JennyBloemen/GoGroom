@@ -29,10 +29,13 @@ export const ADD_PET = gql`
       age: $age
       owner: $owner
     ) {
-      token
-      user {
         _id
+        breed
+        sex
+        weight
         name
+        age
+        owner
       }
     }
   }
