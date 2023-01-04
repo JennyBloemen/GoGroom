@@ -107,7 +107,7 @@ function Header() {
             >
               Scheduling
             </Link>
-            <Link
+            {/* <Link
               to="/services"
               onClick={() => handlePageChange("Services")}
               className={
@@ -117,12 +117,12 @@ function Header() {
               }
             >
               Services
-            </Link>
+            </Link> */}
             <Link
               to="/profile"
               onClick={() => handlePageChange("Profile")}
               className={
-                currentPage === "Services"
+                currentPage === "Profile "
                   ? "nav-link active link1 kbutton-nav"
                   : "nav-link link1 kbutton-nav"
               }
