@@ -1,18 +1,28 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
-import DateTimePicker from 'react-datetime-picker';
+// import dayjs from 'dayjs';
+// import TextField from '@mui/material/TextField';
+// import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+// import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 
-// function for Scheduling page
-function Scheduling() {
-  const [value, onChange] = useState(new Date());
+// export default function BasicDateTimePicker() {
+//   const [value, setValue] = React.useState(dayjs('2022-04-07'));
 
-  return (
-    <div>
-      <h1>Scheduling</h1>
-      <DateTimePicker />
-    </div>
-  );
-}
+//   return (
+//     <LocalizationProvider dateAdapter={AdapterDayjs}>
+//       <DateTimePicker
+//         renderInput={(props) => <TextField {...props} />}
+//         label="DateTimePicker"
+//         value={value}
+//         onChange={(newValue) => {
+//           setValue(newValue);
+//         }}
+//       />
+//     </LocalizationProvider>
+//   );
+// }
+   
 
 // import ProfileList from '../components/ProfileList';
 
@@ -21,8 +31,10 @@ import { QUERY_PROFILES } from '../utils/queries';
 const Scheduling = () => {
   const { loading, data } = useQuery(QUERY_PROFILES);
   const profiles = data?.profiles || [];
+  const [value, onChange] = useState(new Date());
 
-return (
+  return (
+
 <div className='homeBody'>
     <h1>Schedule An Appointment</h1>
     <div className='calendar'>
@@ -31,20 +43,24 @@ return (
         <div className='week'></div>
 
         <form className='makeApt'>
+        <DateTimePicker />
             <select>
-              { loading ? ( <option>Loading...</option> ) : ( <option>Select a service</option> ) } 
+              {/* // day, time, and service */}
+              
+              </select>
+              {/* { loading ? ( <option>Loading...</option> ) : ( <option>Select a service</option> ) } 
               {scheduling.map((scheduling) => ( 
                 <option key={profiles.uuid} value>
-                  {`${scheduling.name} ${scheduling.description} (${scheduling.price})`}
-                </option>
-              ))}
-            </select>
+                  {`${scheduling.name} ${scheduling.description} (${scheduling.price})`} */}
+                {/* </option> */}
+              {/* ))} */}
 
         </form>
     
     </div>
-</div>
+    </div>
+  );
+                };
 
-)};
 
 export default Scheduling;
