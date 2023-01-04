@@ -179,7 +179,7 @@ a {
           transform: rotate(45deg);
   margin-top: -5px;
 }
-
+  
 #toggle1:checked + .hamburger1 .bottom {
   -webkit-transform: scale(0);
           transform: scale(0);
@@ -242,6 +242,7 @@ a {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
 }
 
 .catServices{
@@ -252,6 +253,7 @@ a {
   border-width: 5px;
   width: 90%;
   justify-items: flex-end;
+  margin: 1%;
 }
 
 .dogServices{
@@ -261,6 +263,7 @@ a {
   border-radius: 10px;
   border-width: 5px;
   width: 90%;
+  margin: 1%;
 }
 
 .servH1{
