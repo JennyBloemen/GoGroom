@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 
@@ -27,7 +27,7 @@ const Login = (props) => {
       const { data } = await login({
         variables: { ...formState },
       });
-
+      console.log(JSON.stringify(data));
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
@@ -38,6 +38,7 @@ const Login = (props) => {
       email: "",
       password: "",
     });
+    // Redirect(`/profile/${data.profile._id}`);
   };
 
   return (
