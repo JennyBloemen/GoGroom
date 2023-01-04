@@ -12,23 +12,41 @@ const Scheduling = () => {
 return (
 <div className='homeBody'>
     <h1>Schedule An Appointment</h1>
-    <div className='calendar'>
+  
         
-        <h2>This Week</h2>
-        <div className='week'></div>
-
         <form className='makeApt'>
-            <select>
-                 {/* {services.map((service) => (
-          <option key={service.uuid} value>
-            {`${service.name} ${service.description} (${service.price})`} */}
-          {/* </option> */}
-        {/* ))} */}
-            </select>
+        <label>
+    Pet's Name:
+    <input type="text" name="name" />
+  </label>
+  <input type="submit" value="Submit" />
+  <select id='day'>
+  <option value="mon">Monday</option>
+  <option value="tues">Tuesday</option>
+  <option selected value="wed">Wednesday</option>
+  <option value="thurs">Thursday</option>
+  <option value="fri">Friday</option>
+</select>
+<select id='time'>
+  <option value="9-11">9 AM - 11 AM</option>
+  <option value="11-1">11 AM - 1 PM</option>
+  <option selected value="1-3">1 PM - 3 PM</option>
+  <option value="3-5">3 PM - 5 PM</option>
+  <option value="5-7">5 PM - 7 PM</option>
+</select>
+<select id='service'>
+  {/* TODO @ ashley map through services and move button if you want */}
+  <option value="mon">Monday</option>
+  <option value="tues">Tuesday</option>
+  <option selected value="wed">Wednesday</option>
+  <option value="thurs">Thursday</option>
+  <option value="fri">Friday</option>
+</select>
+
 
         </form>
     
-    </div>
+  
 </div>
 
 )};
