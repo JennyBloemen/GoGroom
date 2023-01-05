@@ -56,8 +56,7 @@ function Profile() {
             <a href="#">Edit</a>
           </div>
         ))}
-
-        <a href="#">Add Appointment</a>
+       
         <Link className="btn btn-lg btn-info m-2" to="/petform">
           Add Pet
         </Link>

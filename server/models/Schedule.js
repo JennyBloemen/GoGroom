@@ -23,6 +23,6 @@ const scheduleSchema = new Schema({
   },
 });
 
-const Schedule = model("Pets", scheduleSchema);
+const Schedule = model("Schedule", scheduleSchema);
 
 module.exports = Schedule;

@@ -31,7 +31,7 @@ const PetForm = () => {
       [name]: value,
     });
   };
-  var navigate = useNavigate();
+  // var navigate = useNavigate();
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);

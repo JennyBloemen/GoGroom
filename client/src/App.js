@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Scheduling from "./pages/Scheduling";
 import Services from "./pages/Services";
 import PetForm from "./pages/PetForm";
+import ScheduleForm from "./pages/ScheduleForm";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/scheduling" element={<Scheduling />} />
         <Route path="/petform" element={<PetForm />} />
+        <Route path="/scheduleform" element={<ScheduleForm />}/>
       </Routes>
     </div>
   );
