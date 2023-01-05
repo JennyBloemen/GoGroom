@@ -3,6 +3,7 @@ import Home from "../pages/Home";
 import Login from "../p/Login";
 import Signup from "../pages/Signup";
 import Profile from "../pages/Profile";
+import PetForm from "./PetForm";
 import Services from "../pages/Services";
 import "../../src/App.css";
 import { useQuery } from "@apollo/client";
@@ -33,6 +34,9 @@ function Header() {
     }
     if (currentPage === "Profile") {
       return <Profile />;
+    }
+    if (currentPage === "PetForm") {
+      return <PetForm />;
     }
     if (currentPage === "Scheduling") {
       return <Scheduling />;
