@@ -277,6 +277,13 @@ Link{
   background-color: #9fdbce;
 }
 
-.userCard{
+.petCard{
+  background-color: var(--sand);
+  border-style: solid;
+  border-color: var(--org);
+  border-radius: 10px;
+  border-width: 5px;
+  width: 25%;
+  margin: 1%;
   
 }
