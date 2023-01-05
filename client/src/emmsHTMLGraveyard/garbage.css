@@ -47,6 +47,8 @@ body{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  padding-bottom: 20px;
 }
 
 .gifGuy{
@@ -255,6 +257,7 @@ a {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  text-align: center;
 }
 
 .catServices{
@@ -282,6 +285,8 @@ a {
   color: var(--sage);
   font-size: 50px;
   text-shadow: #beeae4 2px 5px;
+  text-align: center;
+  padding-left: 20%;
 }
 
 Link{
@@ -409,6 +414,17 @@ footer{
   background-color: #ffeedd;
   text-align: center;
   color:#EC9860 ;
+  height: auto;
+  width: 100%;
+  position:fixed;
+bottom:0;
+}
+
+form{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (orientation: portrait){
@@ -457,5 +473,8 @@ footer{
   padding-bottom: 10%;
 }
 
+.servH1{
+  padding:0;
+}
 
 }
