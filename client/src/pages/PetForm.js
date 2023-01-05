@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/client";
 import Header from "../components/webContainer.js";
 import { ADD_PET } from "../utils/mutations";
 import { QUERY_PETS } from "../utils/queries";
+import rollingCat from '../emmsHTMLGraveyard/rollingCat.GIF'
 
 import Auth from "../utils/auth";
 import jwt_decode from "jwt-decode";
@@ -56,8 +57,9 @@ const PetForm = () => {
   return (
     <div>
       <Header></Header>
-      <h3> Add Your Adorable Pet!</h3>
-      <div>
+      <div className="homeBody">
+      <h3 className="servH1"> Add Your Adorable Pet!</h3>
+      <div className="petForm">
         <form onSubmit={handleFormSubmit}>
           <input
             className="form-input"
@@ -111,6 +113,10 @@ const PetForm = () => {
         {error && (
           <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
         )}
+
+
+        </div>
+        <img className="rollingCat" src={rollingCat}></img>
       </div>
     </div>
   );

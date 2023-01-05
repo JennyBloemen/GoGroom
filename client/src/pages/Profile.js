@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 
 import Header from "../components/webContainer.js";
+import dAndC from "../emmsHTMLGraveyard/dogAndCat.PNG"
 
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
@@ -35,17 +36,23 @@ function Profile() {
     <div>
       <Header></Header>
       <div className="homeBody">
+      <div className="btnDiv">
         <div className="userCard">
           <h2>{user.data.name}</h2>
 
           <ul>
-            <li>phone #:</li>
+          
             <li>email:</li>
           </ul>
         </div>
+        
+        <Link className="btn btn-lg btn-info m-2" id="addPet" to="/petform">
+          Add Pet
+        </Link>
+        </div>
         {userPets.map((pet, index) => (
           <div className="petCard" key={index}>
-            <img src="" alt="your pet here" />
+            <img src={dAndC}  classname="petImg" alt="dog and cat" />
             <h2 className="petname">{pet.name}</h2>
             <ul>
               <li>Breed: {pet.breed}</li>
@@ -53,14 +60,17 @@ function Profile() {
               <li>Weight: {pet.weight}</li>
               <li>Age: {pet.age} </li>
             </ul>
-            <a href="#">Edit</a>
+            <a id = "edit" href="#">Edit</a>
+            <a id = "delete" href="#">Delete</a>
           </div>
         ))}
-       
+    
+      </div>
+      {/* <div className="btnDiv">
         <Link className="btn btn-lg btn-info m-2" to="/petform">
           Add Pet
         </Link>
-      </div>
+        </div> */}
     </div>
   );
 }
