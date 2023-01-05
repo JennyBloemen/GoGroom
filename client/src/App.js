@@ -9,6 +9,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Scheduling from "./pages/Scheduling";
 import Services from "./pages/Services";
+import PetForm from "./pages/PetForm";
 
 function App() {
   return (
@@ -17,9 +18,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/profile/:profileId" element={<Profile />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/services" element={<Services />} />
         <Route path="/scheduling" element={<Scheduling />} />
+        <Route path="/petform" element={<PetForm />} />
       </Routes>
     </div>
   );
