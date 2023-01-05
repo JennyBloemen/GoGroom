@@ -23,14 +23,15 @@ function Profile() {
   return (
     <div>
       <Header></Header>
-      <div className="homeBody">
+      <div className="homeBody">        
         <div className="userCard">
           <h2>{user.data.name}</h2>
+
           <ul>
             <li>phone #:</li>
             <li>email:</li>
           </ul>
-        </div>
+        </div> 
         <div className="petCard">
           <img src="" alt="your pet here" />
           <h2>pet's name:</h2>
