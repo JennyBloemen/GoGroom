@@ -15,6 +15,7 @@ import Header from '../components/webContainer.js';
 //   );
 // }
 
+
 // import ProfileList from '../components/ProfileList';
 
 import { QUERY_PROFILES } from '../utils/queries';
@@ -35,6 +36,7 @@ return (
     Pet's Name:
     <input type="text" name="name" />
   </label>
+
   <select id='day'>
   <option value="mon">Monday</option>
   <option value="tues">Tuesday</option>
@@ -51,6 +53,7 @@ return (
 </select>
 <select id='service'>
   {/* TODO @ ashley map through services and move button if you want */}
+
   <option value="bathAndBrush">Bath And Brush</option>
   <option value="nailFileAndPrep">Nail File and Prep</option>
   <option selected value="topCat">Top Cat</option>
@@ -73,6 +76,7 @@ return (
                   {`${scheduling.name} ${scheduling.description} (${scheduling.price})`} */}
                 {/* </option> */}
               {/* ))} */}
+
 
         </form>
     

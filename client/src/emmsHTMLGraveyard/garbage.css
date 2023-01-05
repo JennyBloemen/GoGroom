@@ -22,19 +22,27 @@
 }
 .navBar{
   background-color: var(--sand);
-  flex-direction: row;
-
+}
+.logo{
+  height: 100%;
 }
 
 body{
   background-color: var(--offw);
   font-family: 'Balsamiq Sans', cursive;
 }
-
+.btn{
+  background-color: var(--sage);
+  color: #f8f7ff;
+  border-radius: 20px;
+  margin: 2%;
+  
+}
 
 .homeBody{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .gifGuy{
@@ -43,8 +51,23 @@ body{
   border-color: #9fdbce;
   border-radius: 10px;
   border-width: 10px;
-  width: 25%;
+  width: 35%;
   height: inherit;
+}
+
+.bigGif{
+  width: 100%;
+  height: 100%;
+}
+.headIcon{
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 1%;
+align-content: center;
+/* width: 50%;
+height: 50%; */
+display: flex;
 }
 
 .dogBanner{
@@ -53,7 +76,9 @@ body{
   border-color: var(--org);
   border-radius: 10px;
   border-width: 5px;
-  width: 30%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
 }
 
 .catBanner{
@@ -62,8 +87,10 @@ body{
   border-color: var(--purp);
   border-radius: 10px;
   border-width: 5px;
-  width: 30%;
+  width: 25%;
   justify-items: flex-end;
+  display: flex;
+  flex-direction: column;
 }
 a {
   color: #fff;
@@ -97,6 +124,7 @@ a {
   height: 90%;
   align-items: center;
   justify-items: center;
+
 }
 
 .signBin{
@@ -151,7 +179,7 @@ a {
           transform: rotate(45deg);
   margin-top: -5px;
 }
-
+  
 #toggle1:checked + .hamburger1 .bottom {
   -webkit-transform: scale(0);
           transform: scale(0);
@@ -214,6 +242,7 @@ a {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
 }
 
 .catServices{
@@ -224,6 +253,7 @@ a {
   border-width: 5px;
   width: 90%;
   justify-items: flex-end;
+  margin: 1%;
 }
 
 .dogServices{
@@ -233,6 +263,7 @@ a {
   border-radius: 10px;
   border-width: 5px;
   width: 90%;
+  margin: 1%;
 }
 
 .servH1{
@@ -244,4 +275,8 @@ a {
 Link{
   color: var(--purp);
   background-color: #9fdbce;
+}
+
+.userCard{
+  
 }

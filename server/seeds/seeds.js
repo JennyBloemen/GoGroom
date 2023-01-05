@@ -36,24 +36,28 @@ db.once("open", async () => {
       sex: "Male",
       weight: "65lbs",
       name: "Winston",
+      age: "2",
     },
     {
       breed: "Yorkie",
       sex: "Female",
       weight: "7lbs",
       name: "Lola",
+      age: "8",
     },
     {
       breed: "Great Dane",
       sex: "Male",
       weight: "200lbs",
       name: "Megalatron",
+      age: "4",
     },
     {
       breed: "Mastiff",
       sex: "Male",
       weight: "150lbs",
       name: "Tiny",
+      age: "6"
     },
   ]);
   console.log("All pets seeded");
