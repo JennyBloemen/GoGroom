@@ -20,13 +20,13 @@ function Profile() {
     <div>
       <Header></Header>
       <div className="homeBody">
-        <div className="userCard">
+        {/* <div className="userCard">
           <h2>User's name</h2>
           <ul>
             <li>phone #:</li>
             <li>email:</li>
           </ul>
-        </div>
+        </div> */}
         <div className="petCard">
           <img src="" alt="your pet here" />
           <h2>pet's name:</h2>
