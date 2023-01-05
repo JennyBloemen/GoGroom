@@ -53,14 +53,27 @@ export const ADD_PET = gql`
 `;
 
 export const ADD_SCHEDULE = gql`
-mutation addSchedule($petname: String!, $day: String!, $time: String!, $Service: String!, $owner: String!) {
-  addSchedule($petname: String!, $day: String!, $time: String!, $Service: String!, $owner: String!) {
-    petname
-    day
-    time
-    service
-    owner {
-      _id
+  mutation addSchedule(
+    $petName: String!
+    $day: String!
+    $time: String!
+    $Service: String!
+    $owner: String!
+  ) {
+    addSchedule(
+      petName: $petName
+      day: $day
+      time: $time
+      service: $service
+      owner: $owner
+    ) {
+      petName
+      day
+      time
+      service
+      owner {
+        _id
+      }
     }
   }
-}`;
+`;

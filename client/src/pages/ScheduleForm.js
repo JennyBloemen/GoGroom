@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Header from "../components/webContainer.js";
-import { ADD_PET, ADD_SCHEDULE } from "../utils/mutations";
-// import { QUERY_PETS } from "../utils/queries";
+import { ADD_SCHEDULE } from "../utils/mutations";
+import { QUERY_PETS } from "../utils/queries";
 
 import Auth from "../utils/auth";
 import jwt_decode from "jwt-decode";
@@ -30,7 +30,7 @@ const ScheduleForm = () => {
       [name]: value,
     });
   };
-  var navigate = useNavigate();
+  // var navigate = useNavigate();
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
@@ -63,11 +63,11 @@ const ScheduleForm = () => {
             value={formState.petName}
             onChange={handleChange}
           />
-          <input  // does this changes to select??
+          <input  
             className="form-input"
             placeholder="Day"
             name="day"
-            type="text" //should this be option
+            type="text" 
             value={formState.day}
             onChange={handleChange}
           />
@@ -75,16 +75,16 @@ const ScheduleForm = () => {
             className="form-input"
             placeholder="Time"
             name="time"
-            type="text"  //should this be option
-            // value={formState.time}
+            type="text"  
+            value={formState.time}
             onChange={handleChange}
           />
           <input
             className="form-input"
             placeholder="Service"
             name="service"
-            type="text" //should this be option
-            // value={formState.service}
+            type="text"
+            value={formState.service}
             onChange={handleChange}
           />
           

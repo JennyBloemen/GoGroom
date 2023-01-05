@@ -1,6 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { Profile, Pets, DogServices, CatServices } = require("../models");
-const Schedule = require("../models/Schedule");
+const { Profile, Pets, DogServices, CatServices, Schedule, } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -17,9 +16,9 @@ const resolvers = {
     pets: async () => {
       return Pets.find();
     },
-    schedule: async () => {
-      return Schedule.find();
-    },
+    // schedule: async () => {
+    //   return Schedule.find();
+    // },
     dogService: async (parent, { dogServiceId }) => {
       return DogServices.findOne({ _id: dogServiceId });
     },
