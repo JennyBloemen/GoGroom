@@ -59,7 +59,7 @@ return (
   <option value="nailGrindingAndSanitation">Nail Grinding & Sanitation</option>
   <option value="topDog">Top Dog</option>
   <option value="topDogPlus">Top Dog Plus</option>
-  <input type="submit" value="Submit" />
+  <input type="submit">Submit</input>
 
 </select>
 
