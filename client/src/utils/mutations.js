@@ -45,6 +45,7 @@ export const ADD_PET = gql`
       sex
       weight
       name
+      age
       owner {
         _id
       }

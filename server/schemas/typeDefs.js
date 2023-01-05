@@ -14,6 +14,7 @@ const typeDefs = gql`
     breed: String
     sex: String
     weight: String
+    age: String
     name: String
     owner: Profile
   }
