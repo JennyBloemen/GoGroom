@@ -71,6 +71,7 @@ const typeDefs = gql`
       day: String!
       time: String!
       service: String!
+      owner: String!
     ): Schedule
     removeProfile(profileId: ID!): Profile
     addPet(

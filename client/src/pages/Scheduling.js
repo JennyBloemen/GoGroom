@@ -35,7 +35,8 @@ const Scheduling = () => {
 
   // const token = window.localStorage.getItem("id_token");
   // const user = jwt_decode(token);
-  // const userid = user.data._id;
+  // const userid = user.data._id; // all we have is the ID
+  // make a query for the the WHOLE USER OBJECT
 
   return (
     <div>

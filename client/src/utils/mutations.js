@@ -57,7 +57,7 @@ export const ADD_SCHEDULE = gql`
     $petName: String!
     $day: String!
     $time: String!
-    $Service: String!
+    $service: String!
     $owner: String!
   ) {
     addSchedule(

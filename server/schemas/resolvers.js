@@ -58,6 +58,8 @@ const resolvers = {
       return { pet };
     },
     addSchedule: async (parent, { petName, day, time, service, owner }) => {
+      console.log(petName, day, time, service, owner);
+
       const schedule = await Schedule.create({
         petName,
         day,
@@ -65,7 +67,7 @@ const resolvers = {
         service,
         owner,
       });
-
+      console.log(schedule);
       return { schedule };
     },
     removePet: async (parent, { petId }) => {
