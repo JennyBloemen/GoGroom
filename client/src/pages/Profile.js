@@ -12,23 +12,40 @@ import jwt_decode from "jwt-decode";
 
 function Profile() {
   const { profileId } = useParams();
+  // const { loading, data } = useQuery(QUERY_SINGLE_PROFILE, {
+  //   variables: { profileId: profileId },
+  // });
 
+  // const profile = data?.profileId || {};
   const token = window.localStorage.getItem("id_token");
   const user = jwt_decode(token);
   const userid = user.data._id;
 
-  const { loading, data } = useQuery(QUERY_PETS);
-  const petData = data?.pets || {};
-  let userPets = [];
 
+
+
+
+
+
+  const { loading, data } = useQuery(QUERY_PETS);
+  
+
+  const petData = data?.pets || {};
+  console.log(petData);
+  
+  let userPets = [];
   for (let i = 0; i < petData.length; i++) {
-    if (petData[i].owner_id == userid) {
-      userPets.push(petData[i]);
-    }
-  }
-  // console.log("here:", userPets);
+    if (petData[i].owner._id == userid) {
+      userPets.push(petData[i])
+    } 
+  };
+
+
+
+
+
   if (loading) {
-    return <h2>loading</h2>;
+    return <h2>loading</h2>
   }
 
   return (
@@ -43,30 +60,31 @@ function Profile() {
             <li>email:</li>
           </ul>
         </div>
-        {userPets.map((pet, index) => (
+        {userPets.map((pet, index) => 
           <div className="petCard" key={index}>
-            <h2>pet's name:{pet.name}</h2>
+            <img src="" alt="your pet here" />
+            <h2>pet's name: {pet.name}</h2>
             <ul>
-              <li>Breed:{pet.breed}</li>
-              <li>Sex:{pet.sex}</li>
-              <li>Weight:{pet.weight}</li>
-              <li>Age:{pet.age}</li>
+              <li>Breed: {pet.breed}</li>
+              <li>Sex: {pet.sex}</li>
+              <li>Weight: {pet.weight}</li>
+              <li>Age: </li>
             </ul>
             <a href="#">Edit</a>
           </div>
-        ))}
-
+        )}
         {/* <div className="petCard">
           <img src="" alt="your pet here" />
-          <h2>pet's name:</h2>
+          <h2>pet's name: {userPets[0].name}</h2>
           <ul>
-            <li>Breed:{userPets[0].breed}</li>
-            <li>Sex:</li>
-            <li>Weight:</li>
-            <li>Age:</li>
+            <li>Breed: {userPets[0].breed}</li>
+            <li>Sex: {userPets[0].sex}</li>
+            <li>Weight: {userPets[0].weight}</li>
+            <li>Age: </li>
           </ul>
           <a href="#">Edit</a>
         </div> */}
+
         <a href="#">Add Appointment</a>
         <Link className="btn btn-lg btn-info m-2" to="/petform">
           Add Pet
@@ -77,9 +95,3 @@ function Profile() {
 }
 
 export default Profile;
-
-// const { loading, data } = useQuery(QUERY_SINGLE_PROFILE, {
-//   variables: { profileId: profileId },
-// });
-
-// const profile = data?.profileId || {};
