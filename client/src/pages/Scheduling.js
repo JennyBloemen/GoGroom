@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 import DateTimePicker from "react-datetime-picker";
 import Header from "../components/webContainer.js";
+import ScheduleForm from "./ScheduleForm.js";
 
 // function for Scheduling page
 // function Scheduling() {
@@ -82,7 +83,22 @@ const Scheduling = () => {
           {/* </option> */}
           {/* ))} */}
         </form>
-      </div>
+        </div>
+        {userSchedule.map((schedule, index) => (
+          <div className="aptCard" key={index}>
+            <img src="" alt="your pet here" />
+            <h2 className="petname">{schedule.petName}</h2>
+            <ul>
+              <li>Day: {schedule.day}</li>
+              <li>Time: {schedule.time}</li>
+              <li>Service: {schedule.service}</li>
+              
+            </ul>
+            <a href="#">Edit</a>
+            <a href="#">Delete</a>
+          </div>
+          ))}
+      
     </div>
   );
 };

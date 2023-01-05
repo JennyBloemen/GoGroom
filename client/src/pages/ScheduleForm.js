@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Header from "../components/webContainer.js";
-import { ADD_PET } from "../utils/mutations";
+import { ADD_PET, ADD_SCHEDULE } from "../utils/mutations";
 // import { QUERY_PETS } from "../utils/queries";
 
 import Auth from "../utils/auth";
@@ -20,7 +20,7 @@ const ScheduleForm = () => {
     service: "",
     owner: userid,
   });
-  const [addSchedule, { error, data }] = useMutation(ADD_PET);
+  const [addSchedule, { error, data }] = useMutation(ADD_SCHEDULE);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -36,68 +36,58 @@ const ScheduleForm = () => {
     console.log(formState);
 
     try {
-      const { data } = await addPet({
+      const { data } = await addSchedule({
         variables: { ...formState },
       });
     } catch (e) {
       console.error(e);
     }
     setFormState({
-      name: "",
-      breed: "",
-      sex: "",
-      weight: "",
-      age: "",
+      petName: "",
+      day: "",
+      time: "",
+      service: "",
       owner: userid,
     });
   };
 
   return (
     <div>
-      <Header></Header>
-      <h3> Add Your Adorable Pet!</h3>
       <div>
         <form onSubmit={handleFormSubmit}>
           <input
             className="form-input"
             placeholder="Pet Name"
-            name="name"
+            name="petName"
             type="text"
-            value={formState.name}
+            value={formState.petName}
+            onChange={handleChange}
+          />
+          <input  // does this changes to select??
+            className="form-input"
+            placeholder="Day"
+            name="day"
+            type="text" //should this be option
+            value={formState.day}
             onChange={handleChange}
           />
           <input
             className="form-input"
-            placeholder="Pet Breed"
-            name="breed"
-            type="text"
-            value={formState.breed}
+            placeholder="Time"
+            name="time"
+            type="text"  //should this be option
+            // value={formState.time}
             onChange={handleChange}
           />
           <input
             className="form-input"
-            placeholder="Pet Gender"
-            name="sex"
-            type="text"
-            value={formState.sex}
+            placeholder="Service"
+            name="service"
+            type="text" //should this be option
+            // value={formState.service}
             onChange={handleChange}
           />
-          <input
-            className="form-input"
-            placeholder="Pet Age"
-            name="age"
-            type="text"
-            value={formState.age}
-            onChange={handleChange}
-          />
-          <input
-            className="form-input"
-            placeholder="Pet Weight"
-            name="weight"
-            type="text"
-            value={formState.weight}
-            onChange={handleChange}
-          />
+          
           <button
             className="btn btn-block btn-info"
             style={{ cursor: "pointer" }}
@@ -115,4 +105,4 @@ const ScheduleForm = () => {
   );
 };
 
-export default PetForm;
+export default ScheduleForm;
