@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import DateTimePicker from 'react-datetime-picker';
-import Header from '../components/Header';
+import Header from '../components/webContainer.js';
 
 // function for Scheduling page
 // function Scheduling() {
