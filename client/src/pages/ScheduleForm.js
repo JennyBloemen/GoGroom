@@ -63,14 +63,14 @@ const ScheduleForm = () => {
             value={formState.petName}
             onChange={handleChange}
           />
-          <input  
+          <input
             className="form-input"
             placeholder="Day"
             name="day"
             type="text" 
             value={formState.day}
             onChange={handleChange}
-          />
+            />
           <input
             className="form-input"
             placeholder="Time"
@@ -106,3 +106,11 @@ const ScheduleForm = () => {
 };
 
 export default ScheduleForm;
+
+
+{/* <select id="day"> 
+           <option value="mon">Monday</option>
+           <option value="tues">Tuesday</option>
+           <option value="wed">Wednesday</option>
+           <option value="thurs">Thursday</option>
+            <option value="fri">Friday</option> */}

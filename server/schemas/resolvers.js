@@ -1,5 +1,11 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { Profile, Pets, DogServices, CatServices, Schedule, } = require("../models");
+const {
+  Profile,
+  Pets,
+  DogServices,
+  CatServices,
+  Schedule,
+} = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -16,7 +22,10 @@ const resolvers = {
     pets: async () => {
       return Pets.find();
     },
-    // schedule: async () => {
+    schedule: async (parent, { scheduleId }) => {
+      return Schedule.findOne({ _id: scheduleId });
+    },
+    // schedules: async () => {
     //   return Schedule.find();
     // },
     dogService: async (parent, { dogServiceId }) => {
@@ -43,13 +52,19 @@ const resolvers = {
     removeProfile: async (parent, { profileId }) => {
       return Profile.findOneAndDelete({ _id: profileId });
     },
-    addPet: async (parent, { breed, sex, weight, name, age, owner}) => {
-      const pet = await Pets.create({ breed, sex, weight, name, age, owner});
+    addPet: async (parent, { breed, sex, weight, name, age, owner }) => {
+      const pet = await Pets.create({ breed, sex, weight, name, age, owner });
 
       return { pet };
     },
-    addSchedule: async (parent, { petName, day, time, service, owner}) => {
-      const schedule = await Schedule.create({ petName, day, time, service, owner});
+    addSchedule: async (parent, { petName, day, time, service, owner }) => {
+      const schedule = await Schedule.create({
+        petName,
+        day,
+        time,
+        service,
+        owner,
+      });
 
       return { schedule };
     },

@@ -54,6 +54,8 @@ const typeDefs = gql`
   type Query {
     profile(profileId: ID!): Profile
     profiles: [Profile]!
+    schedule(scheduleId: ID!): Schedule
+    schedules: [Schedule]!
     pet(petId: ID!): Pets
     pets: [Pets]!
     dogService(dogServiceId: ID!): DogServices
