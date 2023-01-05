@@ -28,7 +28,7 @@ function Profile() {
   }
 
   if (loading) {
-    return <h2>loading</h2>;
+    return <h2>Loading, please hold</h2>;
   }
 
   return (
@@ -51,7 +51,7 @@ function Profile() {
               <li>Breed: {pet.breed}</li>
               <li>Sex: {pet.sex}</li>
               <li>Weight: {pet.weight}</li>
-              <li>Age:{pet.age} </li>
+              <li>Age: {pet.age} </li>
             </ul>
             <a href="#">Edit</a>
           </div>
