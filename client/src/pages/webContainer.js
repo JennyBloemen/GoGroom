@@ -116,10 +116,6 @@ function Header() {
           </nav>
         </nav>
       </section>
-
-      {/* <footer>
-    Made with ❤ by Jenny, Ashley, Kezie and Emm
-  </footer> */}
     </div>
   );
 }

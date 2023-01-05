@@ -3,25 +3,24 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Header from "../components/webContainer.js";
 import { ADD_PET } from "../utils/mutations";
-import { QUERY_PETS } from "../utils/queries";
+// import { QUERY_PETS } from "../utils/queries";
 
 import Auth from "../utils/auth";
 import jwt_decode from "jwt-decode";
 
-const PetForm = () => {
+const ScheduleForm = () => {
   const token = window.localStorage.getItem("id_token");
   const user = jwt_decode(token);
   const userid = user.data._id;
 
   const [formState, setFormState] = useState({
-    name: "",
-    breed: "",
-    sex: "",
-    weight: "",
-    age: "",
+    petName: "",
+    day: "",
+    time: "",
+    service: "",
     owner: userid,
   });
-  const [addPet, { error, data }] = useMutation(ADD_PET);
+  const [addSchedule, { error, data }] = useMutation(ADD_PET);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
