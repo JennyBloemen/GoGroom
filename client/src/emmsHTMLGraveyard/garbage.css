@@ -284,12 +284,12 @@ Link{
 .userCard{
   padding: var(--gap);
     background: var(--entry);
-    border-radius: 8px;
     background-color: #beeae4;
     border-radius: 10px;
     border-style: groove;
     border-width: 5px;
     border-color: #9fdbce;
+    color: #79BFAF;
     /* box-shadow: 0 0 0 1px #b8b8ff, 0 2px 2px #b8b8ff, 0 4px 4px #b8b8ff, 0 4px 4px #b8b8ff, 0 4px 7px #b8b8ff, 0 4px 7px #b8b8ff, 0 4px 7px #b8b8ff; */
 }
 .petCard{
@@ -300,9 +300,18 @@ Link{
   border-width: 5px;
   width: 25%;
   margin: 1%;
+  color: #EC9860;
   
 }
 
-form{
-  background-color: #beeae4;
+.aptCard{
+  background-color: var(--lPurp);
+  border-style: groove;
+  border-color: var(--purp);
+  border-radius: 10px;
+  border-width: 5px;
+  width: 25%;
+  margin: 1%;
+  color: #7261D5;
 }
+
