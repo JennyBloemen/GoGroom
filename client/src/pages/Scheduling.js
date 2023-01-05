@@ -47,7 +47,7 @@ return (
 <select id='time'>
   <option value="9-11">9 AM - 11 AM</option>
   <option value="11-1">11 AM - 1 PM</option>
-  <option selected value="1-3">1 PM - 3 PM</option>
+  <option defaultValue="1-3">1 PM - 3 PM</option>
   <option value="3-5">3 PM - 5 PM</option>
   <option value="5-7">5 PM - 7 PM</option>
 </select>
@@ -56,13 +56,13 @@ return (
 
   <option value="bathAndBrush">Bath And Brush</option>
   <option value="nailFileAndPrep">Nail File and Prep</option>
-  <option selected value="topCat">Top Cat</option>
+  <option defaultValue="topCat">Top Cat</option>
   <option value="topCatPlus">Top Cat Plus</option>
   <option value="bathAndClip">Bath And Clip</option>
   <option value="nailGrindingAndSanitation">Nail Grinding & Sanitation</option>
   <option value="topDog">Top Dog</option>
   <option value="topDogPlus">Top Dog Plus</option>
-  <input type="submit">Submit</input>
+  <input type="submit"></input>
 
 </select>
 
