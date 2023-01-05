@@ -18,7 +18,7 @@ export const ADD_PET = gql`
     $sex: String!
     $weight: String!
     $name: String!
-    $age: Age!
+    $age: String!
     $owner: String!
   ) {
     addPet(
@@ -29,13 +29,14 @@ export const ADD_PET = gql`
       age: $age
       owner: $owner
     ) {
-      _id
       breed
+      age
       sex
       weight
       name
-      age
-      owner
+      owner {
+        _id
+      }
     }
   }
 `;
