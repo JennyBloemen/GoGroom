@@ -29,14 +29,13 @@ export const ADD_PET = gql`
       age: $age
       owner: $owner
     ) {
-        _id
-        breed
-        sex
-        weight
-        name
-        age
-        owner
-      }
+      _id
+      breed
+      sex
+      weight
+      name
+      age
+      owner
     }
   }
 `;

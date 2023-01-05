@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import { QUERY_SINGLE_PROFILE } from "../utils/queries";
+import jwt_decode from "jwt-decode";
 
 function Profile() {
   const { profileId } = useParams();
@@ -15,13 +16,16 @@ function Profile() {
     variables: { profileId: profileId },
   });
   const profile = data?.profileId || {};
+  const token = window.localStorage.getItem("id_token");
+  const user = jwt_decode(token);
+  const userid = user.data._id;
 
   return (
     <div>
       <Header></Header>
       <div className="homeBody">
         <div className="userCard">
-          <h2>User's name</h2>
+          <h2>{user.data.name}</h2>
           <ul>
             <li>phone #:</li>
             <li>email:</li>
@@ -40,7 +44,9 @@ function Profile() {
         </div>
 
         <a href="#">Add Appointment</a>
-        <a href="#"> Add Pet</a>
+        <Link className="btn btn-lg btn-info m-2" to="/petform">
+          Add Pet
+        </Link>
       </div>
     </div>
   );
