@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
-import Header from "../components/webContainer.js";
+import DateTimePicker from 'react-datetime-picker';
+import Header from '../components/webContainer.js';
+
+// function for Scheduling page
+// function Scheduling() {
+//   const [value, onChange] = useState(new Date());
+
+//   return (
+//     <div>
+//       <h1>Scheduling</h1>
+//       <DateTimePicker />
+//     </div>
+//   );
+// }
+
+
 // import ProfileList from '../components/ProfileList';
 
 import { QUERY_PROFILES } from '../utils/queries';
@@ -21,7 +36,7 @@ return (
     Pet's Name:
     <input type="text" name="name" />
   </label>
-  <input type="submit" value="Submit" />
+
   <select id='day'>
   <option value="mon">Monday</option>
   <option value="tues">Tuesday</option>
@@ -38,12 +53,29 @@ return (
 </select>
 <select id='service'>
   {/* TODO @ ashley map through services and move button if you want */}
-  <option value="mon">Monday</option>
-  <option value="tues">Tuesday</option>
-  <option selected value="wed">Wednesday</option>
-  <option value="thurs">Thursday</option>
-  <option value="fri">Friday</option>
+
+  <option value="bathAndBrush">Bath And Brush</option>
+  <option value="nailFileAndPrep">Nail File and Prep</option>
+  <option selected value="topCat">Top Cat</option>
+  <option value="topCatPlus">Top Cat Plus</option>
+  <option value="bathAndClip">Bath And Clip</option>
+  <option value="nailGrindingAndSanitation">Nail Grinding & Sanitation</option>
+  <option value="topDog">Top Dog</option>
+  <option value="topDogPlus">Top Dog Plus</option>
+  <input type="submit">Submit</input>
+
 </select>
+
+            <select>
+              {/* // day, time, and service */}
+              
+              </select>
+              {/* { loading ? ( <option>Loading...</option> ) : ( <option>Select a service</option> ) } 
+              {scheduling.map((scheduling) => ( 
+                <option key={profiles.uuid} value>
+                  {`${scheduling.name} ${scheduling.description} (${scheduling.price})`} */}
+                {/* </option> */}
+              {/* ))} */}
 
 
         </form>
@@ -51,7 +83,6 @@ return (
   
 </div>
 </div>
-
 )};
 
 export default Scheduling;
