@@ -22,6 +22,7 @@ export const QUERY_SINGLE_PROFILE = gql`
         breed
         sex
         weight
+        age
         name
       }
     }
@@ -36,6 +37,7 @@ export const QUERY_PETS = gql`
       sex
       weight
       name
+      age
       owner {
         _id
       }

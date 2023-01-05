@@ -36,12 +36,19 @@ const ScheduleForm = () => {
     console.log(formState);
 
     try {
-      const { data } = await addSchedule({
+     const { data } = await addSchedule({
         variables: { ...formState },
       });
+    /*
+      const { data } = await addSchedule({
+        variables: { petName: formState.petName, day: formState.day, time: formState.time, service: formState.service, owner: userid},
+      });
+      */
+      console.log(data);
     } catch (e) {
       console.error(e);
     }
+    // reset form
     setFormState({
       petName: "",
       day: "",
@@ -49,6 +56,7 @@ const ScheduleForm = () => {
       service: "",
       owner: userid,
     });
+    
   };
 
   return (

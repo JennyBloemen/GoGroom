@@ -14,6 +14,7 @@ const typeDefs = gql`
     breed: String
     sex: String
     weight: String
+    age: String
     name: String
     owner: Profile
   }
@@ -71,6 +72,7 @@ const typeDefs = gql`
       day: String!
       time: String!
       service: String!
+      owner: String!
     ): Schedule
     removeProfile(profileId: ID!): Profile
     addPet(

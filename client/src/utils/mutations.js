@@ -45,6 +45,7 @@ export const ADD_PET = gql`
       sex
       weight
       name
+      age
       owner {
         _id
       }
@@ -57,7 +58,7 @@ export const ADD_SCHEDULE = gql`
     $petName: String!
     $day: String!
     $time: String!
-    $Service: String!
+    $service: String!
     $owner: String!
   ) {
     addSchedule(
