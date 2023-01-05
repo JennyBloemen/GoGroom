@@ -2,26 +2,25 @@ import React, { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Header from "../components/webContainer.js";
-import { ADD_PET } from "../utils/mutations";
+import { ADD_SCHEDULE } from "../utils/mutations";
 import { QUERY_PETS } from "../utils/queries";
 
 import Auth from "../utils/auth";
 import jwt_decode from "jwt-decode";
 
-const PetForm = () => {
+const ScheduleForm = () => {
   const token = window.localStorage.getItem("id_token");
   const user = jwt_decode(token);
   const userid = user.data._id;
 
   const [formState, setFormState] = useState({
-    name: "",
-    breed: "",
-    sex: "",
-    weight: "",
-    age: "",
+    petName: "",
+    day: "",
+    time: "",
+    service: "",
     owner: userid,
   });
-  const [addPet, { error, data }] = useMutation(ADD_PET);
+  const [addSchedule, { error, data }] = useMutation(ADD_SCHEDULE);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -37,68 +36,58 @@ const PetForm = () => {
     console.log(formState);
 
     try {
-      const { data } = await addPet({
+      const { data } = await addSchedule({
         variables: { ...formState },
       });
     } catch (e) {
       console.error(e);
     }
     setFormState({
-      name: "",
-      breed: "",
-      sex: "",
-      weight: "",
-      age: "",
+      petName: "",
+      day: "",
+      time: "",
+      service: "",
       owner: userid,
     });
   };
 
   return (
     <div>
-      <Header></Header>
-      <h3> Add Your Adorable Pet!</h3>
       <div>
         <form onSubmit={handleFormSubmit}>
           <input
             className="form-input"
             placeholder="Pet Name"
-            name="name"
+            name="petName"
             type="text"
-            value={formState.name}
+            value={formState.petName}
             onChange={handleChange}
           />
           <input
             className="form-input"
-            placeholder="Pet Breed"
-            name="breed"
-            type="text"
-            value={formState.breed}
+            placeholder="Day"
+            name="day"
+            type="text" 
+            value={formState.day}
+            onChange={handleChange}
+            />
+          <input
+            className="form-input"
+            placeholder="Time"
+            name="time"
+            type="text"  
+            value={formState.time}
             onChange={handleChange}
           />
           <input
             className="form-input"
-            placeholder="Pet Gender"
-            name="sex"
+            placeholder="Service"
+            name="service"
             type="text"
-            value={formState.sex}
+            value={formState.service}
             onChange={handleChange}
           />
-          <input
-            className="form-input"
-            placeholder="Pet Age"
-            name="age"
-            type="text"
-            value={formState.age}
-            onChange={handleChange}
-          />
-          <input
-            className="form-input"
-            placeholder="Pet Weight"
-            name="weight"
-            type="text"
-            value={formState.weight}
-            onChange={handleChange}
-          />
+          
           <button
             className="btn btn-block btn-info"
             style={{ cursor: "pointer" }}
@@ -116,4 +105,12 @@ const PetForm = () => {
   );
 };
 
-export default PetForm;
+export default ScheduleForm;
+
+
+{/* <select id="day"> 
+           <option value="mon">Monday</option>
+           <option value="tues">Tuesday</option>
+           <option value="wed">Wednesday</option>
+           <option value="thurs">Thursday</option>
+            <option value="fri">Friday</option> */}

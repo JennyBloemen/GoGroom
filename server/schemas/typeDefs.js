@@ -18,6 +18,15 @@ const typeDefs = gql`
     owner: Profile
   }
 
+  type Schedule {
+    _id: ID
+    petName: String
+    day: String
+    time: String
+    service: String
+    owner: Profile
+  }
+
   type DogServices {
     _id: ID
     bathAndBrush: Boolean
@@ -45,6 +54,8 @@ const typeDefs = gql`
   type Query {
     profile(profileId: ID!): Profile
     profiles: [Profile]!
+    schedule(scheduleId: ID!): Schedule
+    schedules: [Schedule]!
     pet(petId: ID!): Pets
     pets: [Pets]!
     dogService(dogServiceId: ID!): DogServices
@@ -54,55 +65,42 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addProfile(
-      name: String!, 
-      email: String!, 
-      password: String!
-    ): Auth
-    removeProfile(
-      profileId: ID!
-    ): Profile
+    addProfile(name: String!, email: String!, password: String!): Auth
+    addSchedule(
+      petName: String!
+      day: String!
+      time: String!
+      service: String!
+    ): Schedule
+    removeProfile(profileId: ID!): Profile
     addPet(
-      breed: String!, 
-      sex: String!, 
-      weight: String!, 
-      name: String!,
-      age: String!,
+      breed: String!
+      sex: String!
+      weight: String!
+      name: String!
+      age: String!
       owner: String!
     ): Pets
-    removePet(
-      petId: ID!
-    ): Pets
+    removePet(petId: ID!): Pets
     addDogService(
-      bathAndBrush: Boolean!,
-      bathAndClip: Boolean!,
-      nailGrindingAndSanitation: Boolean!,
-      topDog: Boolean!,
-      topDogPlus: Boolean!,
-      pet: String!,
+      bathAndBrush: Boolean!
+      bathAndClip: Boolean!
+      nailGrindingAndSanitation: Boolean!
+      topDog: Boolean!
+      topDogPlus: Boolean!
+      pet: String!
     ): DogServices
-    removeDogService(
-      dogServiceId: ID!
-    ): DogServices
+    removeDogService(dogServiceId: ID!): DogServices
     addCatService(
-      bathAndBrush: Boolean!,
-      nailFileAndPrep: Boolean!,
-      topCat: Boolean!,
-      topCatPlus: Boolean!,
-      pet: String!,
-    ): CatServices  
-    removeCatService(
-      catServiceId: ID!
+      bathAndBrush: Boolean!
+      nailFileAndPrep: Boolean!
+      topCat: Boolean!
+      topCatPlus: Boolean!
+      pet: String!
     ): CatServices
-    login(
-      email: String!, 
-      password: String!
-    ): Auth
+    removeCatService(catServiceId: ID!): CatServices
+    login(email: String!, password: String!): Auth
   }
 `;
 
 module.exports = typeDefs;
-
-// addSkill(profileId: ID!, skill: String!): Profile
-// removeSkill(profileId: ID!, skill: String!): Profile
-// skills: [String]!

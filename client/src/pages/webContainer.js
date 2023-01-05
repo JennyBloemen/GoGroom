@@ -4,6 +4,7 @@ import Login from "../p/Login";
 import Signup from "../pages/Signup";
 import Profile from "../pages/Profile";
 import PetForm from "./PetForm";
+import ScheduleForm from "./ScheduleForm";
 import Services from "../pages/Services";
 import "../../src/App.css";
 import { useQuery } from "@apollo/client";
@@ -37,6 +38,9 @@ function Header() {
     }
     if (currentPage === "PetForm") {
       return <PetForm />;
+    }
+    if (currentPage === "ScheduleForm") {
+      return <ScheduleForm />;
     }
     if (currentPage === "Scheduling") {
       return <Scheduling />;
@@ -116,10 +120,6 @@ function Header() {
           </nav>
         </nav>
       </section>
-
-      {/* <footer>
-    Made with ❤ by Jenny, Ashley, Kezie and Emm
-  </footer> */}
     </div>
   );
 }

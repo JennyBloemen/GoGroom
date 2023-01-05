@@ -12,20 +12,6 @@ export const ADD_PROFILE = gql`
   }
 `;
 
-export const ADD_PET = gql`
-mutation addPet($breed: String!, $sex: String!, $weight: String!, $name: String!, $age: String!, $owner: String!) {
-  addPet(breed: $breed, sex: $sex, weight: $weight, name: $name, age: $age, owner: $owner) {
-    breed
-    sex
-    weight
-    name
-    owner {
-      _id
-    }
-  }
-}
-`;
-
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
@@ -33,6 +19,60 @@ export const LOGIN_USER = gql`
       profile {
         _id
         name
+      }
+    }
+  }
+`;
+
+export const ADD_PET = gql`
+  mutation addPet(
+    $breed: String!
+    $sex: String!
+    $weight: String!
+    $name: String!
+    $age: String!
+    $owner: String!
+  ) {
+    addPet(
+      breed: $breed
+      sex: $sex
+      weight: $weight
+      name: $name
+      age: $age
+      owner: $owner
+    ) {
+      breed
+      sex
+      weight
+      name
+      owner {
+        _id
+      }
+    }
+  }
+`;
+
+export const ADD_SCHEDULE = gql`
+  mutation addSchedule(
+    $petName: String!
+    $day: String!
+    $time: String!
+    $Service: String!
+    $owner: String!
+  ) {
+    addSchedule(
+      petName: $petName
+      day: $day
+      time: $time
+      service: $service
+      owner: $owner
+    ) {
+      petName
+      day
+      time
+      service
+      owner {
+        _id
       }
     }
   }

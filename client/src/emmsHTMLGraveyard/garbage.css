@@ -19,6 +19,9 @@
   --org: #ffd8be;
   --mint: #beeae4;
   --sage: #9fdbce;
+  --dPurp: #7261D5;
+  --dSage: #79BFAF;
+  --dOrg: #EC9860;
 }
 .navBar{
   background-color: var(--sand);
@@ -79,6 +82,7 @@ display: flex;
   width: 25%;
   display: flex;
   flex-direction: column;
+  color: var(--dOrg);
 }
 
 .catBanner{
@@ -91,6 +95,7 @@ display: flex;
   justify-items: flex-end;
   display: flex;
   flex-direction: column;
+  color: #7261D5;
 }
 a {
   color: #fff;
@@ -237,7 +242,7 @@ a {
 
 /* services styling */
 
-.servBody{
+.sH1{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -279,13 +284,13 @@ Link{
 .userCard{
   padding: var(--gap);
     background: var(--entry);
-    border-radius: 8px;
     background-color: #beeae4;
     border-radius: 10px;
     border-style: groove;
     border-width: 5px;
     border-color: #9fdbce;
-    box-shadow: 0 0 0 1px #b8b8ff, 0 2px 2px #b8b8ff, 0 4px 4px #b8b8ff, 0 4px 4px #b8b8ff, 0 4px 7px #b8b8ff, 0 4px 7px #b8b8ff, 0 4px 7px #b8b8ff;
+    color: #79BFAF;
+    /* box-shadow: 0 0 0 1px #b8b8ff, 0 2px 2px #b8b8ff, 0 4px 4px #b8b8ff, 0 4px 4px #b8b8ff, 0 4px 7px #b8b8ff, 0 4px 7px #b8b8ff, 0 4px 7px #b8b8ff; */
 }
 .petCard{
   background-color: var(--sand);
@@ -295,5 +300,18 @@ Link{
   border-width: 5px;
   width: 25%;
   margin: 1%;
+  color: #EC9860;
   
 }
+
+.aptCard{
+  background-color: var(--lPurp);
+  border-style: groove;
+  border-color: var(--purp);
+  border-radius: 10px;
+  border-width: 5px;
+  width: 25%;
+  margin: 1%;
+  color: #7261D5;
+}
+
