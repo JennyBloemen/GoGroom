@@ -7,6 +7,7 @@ import '../emmsHTMLGraveyard/garbage.css'
 import catIcon from '../emmsHTMLGraveyard/catIcon.PNG'
 import dogIcon from '../emmsHTMLGraveyard/dogIcon.PNG'
 import tubPup from '../emmsHTMLGraveyard/tubPup.GIF'
+import Footer from '../components/Footer.js'
 
 import Profile from "./Profile.js";
 
@@ -101,7 +102,7 @@ function Home() {
   </div>
        
        </div>
-
+<Footer></Footer>
        </div>
     );
 }
