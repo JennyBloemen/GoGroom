@@ -285,7 +285,7 @@ Link{
     border-style: groove;
     border-width: 5px;
     border-color: #9fdbce;
-    box-shadow: 0 0 0 1px #b8b8ff, 0 2px 2px #b8b8ff, 0 4px 4px #b8b8ff, 0 4px 4px #b8b8ff, 0 4px 7px #b8b8ff, 0 4px 7px #b8b8ff, 0 4px 7px #b8b8ff;
+    /* box-shadow: 0 0 0 1px #b8b8ff, 0 2px 2px #b8b8ff, 0 4px 4px #b8b8ff, 0 4px 4px #b8b8ff, 0 4px 7px #b8b8ff, 0 4px 7px #b8b8ff, 0 4px 7px #b8b8ff; */
 }
 .petCard{
   background-color: var(--sand);
