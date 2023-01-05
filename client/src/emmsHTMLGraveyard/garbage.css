@@ -57,6 +57,8 @@ body{
   border-width: 10px;
   width: 35%;
   height: inherit;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .bigGif{
@@ -84,6 +86,8 @@ display: flex;
   display: flex;
   flex-direction: column;
   color: var(--dOrg);
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .catBanner{
@@ -97,6 +101,8 @@ display: flex;
   display: flex;
   flex-direction: column;
   color: #7261D5;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 a {
   color: #fff;
