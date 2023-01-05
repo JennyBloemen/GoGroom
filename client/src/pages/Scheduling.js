@@ -62,14 +62,14 @@ return (
   <option value="nailGrindingAndSanitation">Nail Grinding & Sanitation</option>
   <option value="topDog">Top Dog</option>
   <option value="topDogPlus">Top Dog Plus</option>
-  <input type="submit"></input>
+  
 
 </select>
-
-            <select>
+<button type="submit">submit</button>
+            {/* <select> */}
               {/* // day, time, and service */}
               
-              </select>
+              {/* </select> */}
               {/* { loading ? ( <option>Loading...</option> ) : ( <option>Select a service</option> ) } 
               {scheduling.map((scheduling) => ( 
                 <option key={profiles.uuid} value>
