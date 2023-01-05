@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-
+import Footer from '../components/Footer.js'
 import Header from "../components/webContainer.js";
 import dAndC from "../emmsHTMLGraveyard/dogAndCat.PNG"
 
@@ -46,7 +46,7 @@ function Profile() {
           </ul>
         </div>
         
-        <Link className="btn btn-lg btn-info m-2" id="addPet" to="/petform">
+        <Link className="btn " id="addPet" to="/petform">
           Add Pet
         </Link>
         </div>
@@ -60,8 +60,10 @@ function Profile() {
               <li>Weight: {pet.weight}</li>
               <li>Age:{pet.age} </li>
             </ul>
+            <div classname="editDelete">
             <a id = "edit" href="#">Edit</a>
             <a id = "delete" href="#">Delete</a>
+            </div>
           </div>
         ))}
     
@@ -71,6 +73,8 @@ function Profile() {
           Add Pet
         </Link>
         </div> */}
+
+        <Footer></Footer>
     </div>
   );
 }

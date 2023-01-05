@@ -5,6 +5,7 @@ import Header from "../components/webContainer.js";
 import { ADD_PET } from "../utils/mutations";
 import { QUERY_PETS } from "../utils/queries";
 import rollingCat from '../emmsHTMLGraveyard/rollingCat.GIF'
+import Footer from '../components/Footer.js'
 
 import Auth from "../utils/auth";
 import jwt_decode from "jwt-decode";
@@ -102,7 +103,7 @@ const PetForm = () => {
             onChange={handleChange}
           />
           <button
-            className="btn btn-block btn-info"
+            className="btn"
             style={{ cursor: "pointer" }}
             type="submit"
           >
@@ -118,6 +119,7 @@ const PetForm = () => {
         </div>
         <img className="rollingCat" src={rollingCat}></img>
       </div>
+      <Footer></Footer>
     </div>
   );
 };
