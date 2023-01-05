@@ -39,6 +39,7 @@ const Scheduling = () => {
             <input type="text" name="name" />
           </label>
 
+
           <select id="day">
             <option value="mon">Monday</option>
             <option value="tues">Tuesday</option>
@@ -56,23 +57,25 @@ const Scheduling = () => {
             <option value="5-7">5 PM - 7 PM</option>
           </select>
           <select id="service">
-            {/* TODO @ ashley map through services and move button if you want */}
+            
+  <option value="bathAndBrush">Bath And Brush</option>
+  <option value="nailFileAndPrep">Nail File and Prep</option>
+  <option defaultValue="topCat">Top Cat</option>
+  <option value="topCatPlus">Top Cat Plus</option>
+  <option value="bathAndClip">Bath And Clip</option>
+  <option value="nailGrindingAndSanitation">Nail Grinding & Sanitation</option>
+  <option value="topDog">Top Dog</option>
+  <option value="topDogPlus">Top Dog Plus</option>
+  
 
-            <option value="bathAndBrush">Bath And Brush</option>
-            <option value="nailFileAndPrep">Nail File and Prep</option>
-            <option defaultValue="topCat">Top Cat</option>
-            <option value="topCatPlus">Top Cat Plus</option>
-            <option value="bathAndClip">Bath And Clip</option>
-            <option value="nailGrindingAndSanitation">
-              Nail Grinding & Sanitation
-            </option>
-            <option value="topDog">Top Dog</option>
-            <option value="topDogPlus">Top Dog Plus</option>
-            <input type="submit"></input>
-          </select>
+</select>
+<button type="submit">submit</button>
+            {/* <select> */}
+              {/* // day, time, and service */}
+              
+              {/* </select> */}
+              {/* { loading ? ( <option>Loading...</option> ) : ( <option>Select a service</option> ) } 
 
-          <select>{/* // day, time, and service */}</select>
-          {/* { loading ? ( <option>Loading...</option> ) : ( <option>Select a service</option> ) } 
               {scheduling.map((scheduling) => ( 
                 <option key={profiles.uuid} value>
                   {`${scheduling.name} ${scheduling.description} (${scheduling.price})`} */}
