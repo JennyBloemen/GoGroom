@@ -7,23 +7,28 @@ import Header from "../components/webContainer.js";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
-import { QUERY_SINGLE_PROFILE } from "../utils/queries";
+import { QUERY_PETS, QUERY_SINGLE_PROFILE } from "../utils/queries";
 import jwt_decode from "jwt-decode";
 
 function Profile() {
   const { profileId } = useParams();
-  const { loading, data } = useQuery(QUERY_SINGLE_PROFILE, {
-    variables: { profileId: profileId },
-  });
-  const profile = data?.profileId || {};
+  // const { loading, data } = useQuery(QUERY_SINGLE_PROFILE, {
+  //   variables: { profileId: profileId },
+  // });
+
+  // const profile = data?.profileId || {};
   const token = window.localStorage.getItem("id_token");
   const user = jwt_decode(token);
   const userid = user.data._id;
-
+  console.log(user.data);
+  const { loading, data } = useQuery(QUERY_SINGLE_PROFILE, {
+    variables: { profileId: userid },
+  });
+  console.log("here:", data);
   return (
     <div>
       <Header></Header>
-      <div className="homeBody">        
+      <div className="homeBody">
         <div className="userCard">
           <h2>{user.data.name}</h2>
 
@@ -31,7 +36,7 @@ function Profile() {
             <li>phone #:</li>
             <li>email:</li>
           </ul>
-        </div> 
+        </div>
         <div className="petCard">
           <img src="" alt="your pet here" />
           <h2>pet's name:</h2>

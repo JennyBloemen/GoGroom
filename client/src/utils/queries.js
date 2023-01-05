@@ -15,7 +15,15 @@ export const QUERY_SINGLE_PROFILE = gql`
     profile(profileId: $profileId) {
       _id
       name
-      pets
+      email
+      password
+      pets {
+        _id
+        breed
+        sex
+        weight
+        name
+      }
     }
   }
 `;
@@ -24,12 +32,13 @@ export const QUERY_PETS = gql`
   query getPets {
     pets {
       _id
-      name
       breed
       sex
       weight
-      age
-      owner
+      name
+      owner {
+        _id
+      }
     }
   }
 `;
