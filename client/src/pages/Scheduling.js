@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-
+import Footer from '../components/Footer.js';
 import Header from "../components/webContainer.js";
 
 import { useParams } from "react-router-dom";
@@ -54,6 +54,7 @@ function Schedule() {
             </ul>
           </div>
         ))}
+        <Footer></Footer>
        </div> 
   );
 };
