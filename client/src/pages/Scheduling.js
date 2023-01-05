@@ -42,7 +42,7 @@ const Scheduling = () => {
     <div>
       <Header></Header>
       <div className="homeBody">
-        <h1>Schedule An Appointment</h1>
+        <h1 className="servH1">Schedule An Appointment</h1>
 
         <ScheduleForm></ScheduleForm>
       
