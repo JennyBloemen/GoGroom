@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/client";
 import DateTimePicker from "react-datetime-picker";
 import Header from "../components/webContainer.js";
 import { Link } from "react-router-dom";
-// import ScheduleForm from "./ScheduleForm.js";
+import ScheduleForm from "./ScheduleForm.js";
 // import jwt_decode from "jwt-decode";
 
 // let userSchedule = [];
@@ -42,10 +42,41 @@ const Scheduling = () => {
       <Header></Header>
       <div className="homeBody">
         <h1>Schedule An Appointment</h1>
-        <Link className="btn btn-lg btn-info m-2" to="/scheduleform">
+
+        <ScheduleForm></ScheduleForm>
+      
+      {/* TODO @ash - make the info from database render here */}
+        {/* </div>
+        {userSchedule.map((schedule, index) => (
+          <div className="aptCard" key={index}>
+            <img src="" alt="your pet here" />
+            <h2 className="petname">{schedule.petName}</h2>
+            <ul>
+              <li>Day: {schedule.day}</li>
+              <li>Time: {schedule.time}</li>
+              <li>Service: {schedule.service}</li>
+              
+            </ul>
+            <a href="#">Edit</a>
+            <a href="#">Delete</a>
+          </div>
+        ))}*/}
+     </div> 
+     </div> 
+  );
+};
+
+export default Scheduling;
+
+
+
+
+
+
+  {/* <Link className="btn btn-lg btn-info m-2" to="/scheduleform">
           Schedule Now
-        </Link>
-        <form className="makeApt">
+        </Link> */}
+        {/* <form className="makeApt">
           <label>
             Pet's Name:
             <input type="text" name="name" />
@@ -79,7 +110,7 @@ const Scheduling = () => {
             <option value="topDog">Top Dog</option>
             <option value="topDogPlus">Top Dog Plus</option>
           </select>
-          <button type="submit">submit</button>
+          <button type="submit">submit</button> */}
           {/* <select> */}
           {/* // day, time, and service */}
 
@@ -91,25 +122,4 @@ const Scheduling = () => {
                   {`${scheduling.name} ${scheduling.description} (${scheduling.price})`} */}
           {/* </option> */}
           {/* ))} */}
-        </form>
-        {/* </div>
-        {userSchedule.map((schedule, index) => (
-          <div className="aptCard" key={index}>
-            <img src="" alt="your pet here" />
-            <h2 className="petname">{schedule.petName}</h2>
-            <ul>
-              <li>Day: {schedule.day}</li>
-              <li>Time: {schedule.time}</li>
-              <li>Service: {schedule.service}</li>
-              
-            </ul>
-            <a href="#">Edit</a>
-            <a href="#">Delete</a>
-          </div>
-          ))} */}
-      </div>
-    </div>
-  );
-};
-
-export default Scheduling;
+        {/* </form> */}
