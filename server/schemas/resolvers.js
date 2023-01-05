@@ -25,9 +25,9 @@ const resolvers = {
     schedule: async (parent, { scheduleId }) => {
       return Schedule.findOne({ _id: scheduleId });
     },
-    // schedules: async () => {
-    //   return Schedule.find();
-    // },
+    schedules: async () => {
+      return Schedule.find();
+    },
     dogService: async (parent, { dogServiceId }) => {
       return DogServices.findOne({ _id: dogServiceId });
     },

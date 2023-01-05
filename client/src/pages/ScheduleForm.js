@@ -63,12 +63,12 @@ const ScheduleForm = () => {
             value={formState.petName}
             onChange={handleChange}
           />
-          <input
+          <input  //got to select
             className="form-input"
             placeholder="Day"
             name="day"
             type="text" 
-            value={formState.day}
+            value={formState.day}  //how do we edit this value and the options below to make drop down versus input
             onChange={handleChange}
             />
           <input
@@ -108,9 +108,9 @@ const ScheduleForm = () => {
 export default ScheduleForm;
 
 
-{/* <select id="day"> 
-           <option value="mon">Monday</option>
-           <option value="tues">Tuesday</option>
-           <option value="wed">Wednesday</option>
-           <option value="thurs">Thursday</option>
-            <option value="fri">Friday</option> */}
+//  <select id="day"> 
+//            <option value="mon">Monday</option>
+//            <option value="tues">Tuesday</option>
+//            <option value="wed">Wednesday</option>
+//            <option value="thurs">Thursday</option>
+//            <option value="fri">Friday</option> 
