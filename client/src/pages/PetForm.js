@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-
+import Header from "../components/webContainer.js";
 import { ADD_PET } from "../utils/mutations";
 import { QUERY_PETS } from "../utils/queries";
 
@@ -55,6 +55,7 @@ const PetForm = () => {
 
   return (
     <div>
+      <Header></Header>
       <h3> Add Your Adorable Pet!</h3>
       <div>
         <form onSubmit={handleFormSubmit}>
