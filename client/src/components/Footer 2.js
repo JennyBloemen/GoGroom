@@ -6,7 +6,7 @@ function Footer() {
     return (
 
         <footer>
-            Made with ❤ Jenny, Emm, Ash and Kez
+            Made with LOVE Jenny, Emm, Ash and Kez
         </footer>
 
     );
