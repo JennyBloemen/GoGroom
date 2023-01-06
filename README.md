@@ -45,4 +45,5 @@ THEN I am redirected to the home page with an option to log in or sign up
 ## DEPLOYMENT
 <img src="/Users/ashleybostrom/Documents/Coding/working-files/GoGroom/client/public/gogroomhomepage.png"/>
 
-Heroku: 
+## Heroku 
+https://shrouded-lowlands-65870.herokuapp.com/
