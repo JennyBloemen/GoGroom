@@ -20,15 +20,18 @@ function Schedule() {
   const userid = user.data._id;
 
   const { loading, data } = useQuery(QUERY_SCHEDULE);
-  const scheduleData = data?.schedule || {};
-  // console.log(scheduleData);
+  const scheduleData = data?.schedules || {};
+
 
   let userSchedule = [];
   for (let i = 0; i < scheduleData.length; i++) {
+    console.log(1)
     if (scheduleData[i].owner._id === userid) {
       userSchedule.push(scheduleData[i]);
     }
   }
+
+  console.log(userSchedule)
 
   if (loading) {
     return <h2>Loading, please hold</h2>;

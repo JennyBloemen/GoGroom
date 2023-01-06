@@ -1,3 +1,16 @@
+
+// const removePet = (id)=> {
+//   const newPet = pets.filter((pet)=>pet.id !==id);
+//   setNewPet(newPet);
+  
+//  set(newPet)
+
+
+
+
+
+
+
 // function for Scheduling page
 // function Scheduling() {
 //   const [value, onChange] = useState(new Date());
