@@ -2,14 +2,14 @@
 
 This application serves users that are dog and/or cat owners who would like to schedule grooming appointments for their pets. This application allows them to create a user profile with their name and email address. Users will be able to add a profile per pet that includes the pet's name, breed, sex, weight, and age. With the profile and pet information, users will be able to schedule appointments for their pets where they can choose the day, time, and grooming service. The home page offers detailed descriptions of the grooming services for dogs and cats, respectively. This application will make scheduling appointments for a particular pet based on preferences a much more efficient and informative process.
 
-USER STORY
+## USER STORY
 ```
 AS A pet owner
 I WANT to add my contact information along with my pet information
 SO THAT I can book new appointments efficiently and conveniently
 ```
 
-ACCEPTANCE CRITERIA
+## ACCEPTANCE CRITERIA
 ```
 GIVEN I am an authenticated user with a username and password
 WHEN I log in to the application
@@ -41,3 +41,8 @@ THEN I can see a detailed description of services
 WHEN I choose to log out
 THEN I am redirected to the home page with an option to log in or sign up
 ```
+
+## DEPLOYMENT
+<img src="/Users/ashleybostrom/Documents/Coding/working-files/GoGroom/client/public/gogroomhomepage.png"/>
+
+Heroku: 
