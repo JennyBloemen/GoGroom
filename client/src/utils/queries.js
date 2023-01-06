@@ -46,16 +46,16 @@ export const QUERY_PETS = gql`
 `;
 
 export const QUERY_SCHEDULE = gql`
-  query getSchedule {
-    pets {
+query Schedule {
+  schedules {
+    _id
+    petName
+    day
+    time
+    service
+    owner {
       _id
-      petName
-      day
-      time
-      service
-      owner {
-        _id
-      }
     }
   }
+}
 `;
