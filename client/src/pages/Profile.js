@@ -42,7 +42,7 @@ function Profile() {
 
           <ul>
           
-            <li>email:</li>
+            <li>email: {user.data.email}</li>
           </ul>
         </div>
         
