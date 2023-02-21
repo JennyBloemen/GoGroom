@@ -1,6 +1,6 @@
 # GoGroom: Top Services for Top Dogs & Cats
 
-This application serves users that are dog and/or cat owners who would like to schedule grooming appointments for their pets. This application allows them to create a user profile with their name and email address. Users will be able to add a . With the profile and pet information, users will be able to schedule appointments for their pets where they can choose the day, time, and grooming service. The home page offers detailed descriptions of the grooming services for dogs and cats, respectively. This application will make scheduling appointments for a particular pet based on preferences a much more efficient and informative process.
+This application serves users that are dog and/or cat owners who would like to schedule grooming appointments for their pets. This application allows them to create a user profile with their name and email address. This application will make scheduling appointments for a particular pet based on preferences a much more efficient and informative process.
 
 ## Table of Contents
 
