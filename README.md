@@ -1,31 +1,33 @@
 # GoGroom: Top Services for Top Dogs & Cats
 
-This application serves users that are dog and/or cat owners who would like to schedule grooming appointments for their pets. This application allows them to create a user profile with their name and email address. Users will be able to add a profile per pet that includes the pet's name, breed, sex, weight, and age. With the profile and pet information, users will be able to schedule appointments for their pets where they can choose the day, time, and grooming service. The home page offers detailed descriptions of the grooming services for dogs and cats, respectively. This application will make scheduling appointments for a particular pet based on preferences a much more efficient and informative process.
+This application serves users that are dog and/or cat owners who would like to schedule grooming appointments for their pets. This application allows them to create a user profile with their name and email address. This application will make scheduling appointments for a particular pet based on preferences a much more efficient and informative process.
 
-## USER STORY
-```
-AS A pet owner
-I WANT to add my contact information along with my pet information
-SO THAT I can book new appointments efficiently and conveniently
-```
+## Table of Contents
 
-## ACCEPTANCE CRITERIA
+- [Installation](#installation)
+- [Usage](#usage)
+- [Application Images](#Images)
+- [Deployed Application](#deployment)
+- [Developers](#developers)
+
+## Installation
+Users are able to access the site with the link in this ReadME. This applicatoin is built using React.js. To run the application, clone  the code to your own repository and run "npm i" from the root folder. This will install all dependencies needed in the server and client folders. Once all dependencies are installed you can run "npm run develop" this will start both the client and server concurrently, establish a connection to the MongoDB, and open the application in your default browser.
+
+## Usage
 ```
-GIVEN I am an authenticated user with a username and password
-WHEN I log in to the application
-THEN I am taken to my profile page with my information, my pet's information, and an option to add a new pet
-GIVEN I have not created an account
-WHEN I sign up from the home page
-THEN I am presented with fields to create a username and password associated with my existing email address
+WHEN I access the home page,
+THEN I am able to view available pet services for cats and dogs
+WHEN I select sign up, 
+THEN I am able to create and account with an authenticated email and password
 GIVEN my account username or password is incorrect
 WHEN my authentication does not pass requirements
 THEN I will receive an error message
+WHEN I log in to the application
+THEN I am taken to my profile page with my information, my pet's information, and an option to add a new pet
 GIVEN I have not created any pet profiles
 THEN I am prompted to create a new pet profile from my pet page
 WHEN I create a new pet profile
 THEN I will have a pet profile saved to my user profile
-WHEN I edit my pet profile
-THEN I can edit any part of my pet's information
 WHEN I have successfully created a pet profile
 THEN I am able to make a new appointment for my pet
 WHEN I navigate to the scheduling page
@@ -42,8 +44,21 @@ WHEN I choose to log out
 THEN I am redirected to the home page with an option to log in or sign up
 ```
 
-## DEPLOYMENT
-<img src="/Users/ashleybostrom/Documents/Coding/working-files/GoGroom/client/public/gogroomhomepage.png"/>
+## Images
+<img src="./client/public/gogroomhomepage.png"/>
 
-## Heroku 
+## Deployment
 https://shrouded-lowlands-65870.herokuapp.com/
+
+## Developers
+Jenny Bloemen 
+https://github.com/JennyBloemen
+
+Emm Wimm
+https://github.com/EMMWIMM
+
+Kezie Stewart
+https://github.com/kezie14
+
+Ashley Bostrom
+https://github.com/ashleybostrom
